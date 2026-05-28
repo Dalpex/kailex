@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Globe, Camera, User, ArrowRight, Mail, MapPin, Phone } from 'lucide-react'
-import logoLight from '../../logokailexlight.png'
-import logoDark from '../../logokailexdark.png'
+import logoFooter from '../../logokailexk.png'
 
 const footerLinks = {
   productos: [
@@ -74,14 +73,9 @@ export default function Footer() {
           <div className="col-span-2">
             <Link to="/" className="flex items-center space-x-3 mb-6">
               <img
-                src={logoLight}
+                src={logoFooter}
                 alt="Kailex"
-                className="h-14 w-auto dark:hidden"
-              />
-              <img
-                src={logoDark}
-                alt="Kailex"
-                className="h-14 w-auto hidden dark:block"
+                className="h-14 w-auto"
               />
             </Link>
             <p className="text-slate-600 dark:text-slate-400 mb-6 max-w-xs">
