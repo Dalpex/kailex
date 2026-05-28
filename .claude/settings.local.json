@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:github.com)",
+      "Bash(/plugin marketplace *)",
+      "Read(//c/Users/tmfss/.claude/plugins/cache/ui-ux-pro-max-skill/ui-ux-pro-max/2.5.0/.claude/skills/ui-ux-pro-max/**)",
+      "Bash(python3 skills/ui-ux-pro-max/scripts/search.py \"web development agency professional modern\" --design-system -p \"Kailex\")",
+      "Bash(dir)",
+      "Bash(dir *)",
+      "Bash(python3 search.py \"web development agency professional modern\" --design-system -p \"Kailex\")",
+      "Bash(python3 search.py \"saas professional clean trustworthy\" --design-system -p \"Kailex\")",
+      "Bash(npm create *)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(npm uninstall *)",
+      "Bash(node *)",
+      "Bash(npx skills *)",
+      "Bash(git init *)",
+      "Bash(git add *)"
+    ]
+  }
+}
