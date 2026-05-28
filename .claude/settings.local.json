@@ -21,7 +21,9 @@
       "Bash(git remote *)",
       "Bash(git branch *)",
       "Bash(git push *)",
-      "Bash(git rm *)"
+      "Bash(git rm *)",
+      "Bash(Move-Item \"C:\\\\Users\\\\tmfss\\\\Desktop\\\\Kailex\\\\logokailexdark.png\" \"C:\\\\Users\\\\tmfss\\\\Desktop\\\\Kailex\\\\logokailexdark-v2.png\" -Force)",
+      "Bash(Move-Item \"C:\\\\Users\\\\tmfss\\\\Desktop\\\\Kailex\\\\logokailexlight.png\" \"C:\\\\Users\\\\tmfss\\\\Desktop\\\\Kailex\\\\logokailexlight-v2.png\" -Force)"
     ]
   }
 }
