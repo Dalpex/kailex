@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, ArrowRight } from 'lucide-react'
+import logoLight from '../../logokailexlight.png'
+import logoDark from '../../logokailexdark.png'
 
 const navItems = [
   { path: '/', label: 'Home' },
@@ -44,14 +46,20 @@ export default function Navbar() {
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-3 group">
               <motion.div
-                whileHover={{ scale: 1.05, rotate: 5 }}
-                className="w-10 h-10 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/25 group-hover:shadow-indigo-500/40 transition-shadow"
+                whileHover={{ scale: 1.05 }}
+                className="flex items-center"
               >
-                <span className="text-white font-bold text-xl">K</span>
+                <img
+                  src={logoLight}
+                  alt="Kailex"
+                  className="h-10 w-auto dark:hidden"
+                />
+                <img
+                  src={logoDark}
+                  alt="Kailex"
+                  className="h-10 w-auto hidden dark:block"
+                />
               </motion.div>
-              <span className="text-xl font-bold text-slate-900 dark:text-white">
-                Kailex
-              </span>
             </Link>
 
             {/* Desktop Navigation */}

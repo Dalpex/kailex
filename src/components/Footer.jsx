@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Globe, Camera, User, ArrowRight, Mail, MapPin, Phone } from 'lucide-react'
+import logoLight from '../logokailexlight.png'
+import logoDark from '../logokailexdark.png'
 
 const footerLinks = {
   productos: [
@@ -71,10 +73,16 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2">
             <Link to="/" className="flex items-center space-x-3 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
-                <span className="text-white font-bold text-xl">K</span>
-              </div>
-              <span className="text-xl font-bold text-slate-900 dark:text-white">Kailex</span>
+              <img
+                src={logoLight}
+                alt="Kailex"
+                className="h-10 w-auto dark:hidden"
+              />
+              <img
+                src={logoDark}
+                alt="Kailex"
+                className="h-10 w-auto hidden dark:block"
+              />
             </Link>
             <p className="text-slate-600 dark:text-slate-400 mb-6 max-w-xs">
               Desarrollo de páginas web modernas, rápidas y accesibles para negocios
@@ -159,11 +167,15 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start space-x-3 text-slate-600 dark:text-slate-400">
                 <Mail className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                <span>hola@kailex.com</span>
+                <a href="mailto:dalpex@kailex.site" className="hover:text-indigo-500 transition-colors">
+                  dalpex@kailex.site
+                </a>
               </li>
               <li className="flex items-start space-x-3 text-slate-600 dark:text-slate-400">
                 <Phone className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                <span>+54 11 1234 5678</span>
+                <a href="https://wa.me/5491169605924" className="hover:text-indigo-500 transition-colors">
+                  +54 11 6960 5924
+                </a>
               </li>
               <li className="flex items-start space-x-3 text-slate-600 dark:text-slate-400">
                 <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5" />
