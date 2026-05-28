@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Globe, Camera, User, ArrowRight, Mail, MapPin, Phone } from 'lucide-react'
-import logoLight from '../logokailexlight.png'
-import logoDark from '../logokailexdark.png'
+import logoLight from '../../logokailexlight.png'
+import logoDark from '../../logokailexdark.png'
 
 const footerLinks = {
   productos: [
