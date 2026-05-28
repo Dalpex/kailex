@@ -76,12 +76,12 @@ export default function Footer() {
               <img
                 src={logoLight}
                 alt="Kailex"
-                className="h-10 w-auto dark:hidden"
+                className="h-14 w-auto dark:hidden"
               />
               <img
                 src={logoDark}
                 alt="Kailex"
-                className="h-10 w-auto hidden dark:block"
+                className="h-14 w-auto hidden dark:block"
               />
             </Link>
             <p className="text-slate-600 dark:text-slate-400 mb-6 max-w-xs">
