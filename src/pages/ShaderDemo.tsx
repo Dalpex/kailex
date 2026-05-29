@@ -3,8 +3,8 @@ import { MeshGradient, DotOrbit } from "@paper-design/shaders-react"
 import AnimatedBackground from "../components/AnimatedBackground"
 
 export default function ShaderDemo() {
-  const [intensity, setIntensity] = useState(1.5)
-  const [speed, setSpeed] = useState(1.0)
+  const [intensity, setIntensity] = useState(0.8)
+  const [speed, setSpeed] = useState(0.3)
   const [activeEffect, setActiveEffect] = useState<"mesh" | "dots" | "combined">("mesh")
 
   return (
@@ -61,13 +61,13 @@ export default function ShaderDemo() {
           <div className="max-w-md mx-auto space-y-6 mb-12">
             <div>
               <label className="block text-sm font-medium text-slate-400 mb-2">
-                Speed: {speed.toFixed(1)}
+                Speed: {speed.toFixed(2)}
               </label>
               <input
                 type="range"
-                min="0.1"
-                max="3"
-                step="0.1"
+                min="0.05"
+                max="1"
+                step="0.05"
                 value={speed}
                 onChange={(e) => setSpeed(parseFloat(e.target.value))}
                 className="w-full accent-indigo-500"
@@ -79,8 +79,8 @@ export default function ShaderDemo() {
               </label>
               <input
                 type="range"
-                min="0.5"
-                max="3"
+                min="0.3"
+                max="1.5"
                 step="0.1"
                 value={intensity}
                 onChange={(e) => setIntensity(parseFloat(e.target.value))}
