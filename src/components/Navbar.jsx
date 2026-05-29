@@ -14,10 +14,6 @@ const navItems = [
   { path: '/contacto', label: 'Contacto' },
 ]
 
-const experimentalItems = [
-  { path: '/shader-demo', label: '🔮 Shader Demo' },
-]
-
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -85,16 +81,6 @@ export default function Navbar() {
                       transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
                     />
                   )}
-                  {item.label}
-                </Link>
-              ))}
-              {/* Experimental items */}
-              {experimentalItems.map((item) => (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  className="px-4 py-2 text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors"
-                >
                   {item.label}
                 </Link>
               ))}
@@ -168,22 +154,6 @@ export default function Navbar() {
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </motion.div>
-                {/* Experimental items */}
-                {experimentalItems.map((item) => (
-                  <motion.div
-                    key={item.path}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: (navItems.length + 1) * 0.05 }}
-                  >
-                    <Link
-                      to={item.path}
-                      className="block px-4 py-4 text-lg font-medium text-indigo-600 dark:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-950/30 rounded-xl transition-colors"
-                    >
-                      {item.label}
-                    </Link>
-                  </motion.div>
-                ))}
               </div>
             </div>
           </motion.div>

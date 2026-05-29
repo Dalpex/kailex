@@ -107,10 +107,10 @@ export default function SobreNosotros() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Nuestros valores
             </h2>
-            <p className="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+            <p className="text-xl text-white/80 max-w-2xl mx-auto">
               Los principios que guían cada decisión que tomamos.
             </p>
           </motion.div>
@@ -123,15 +123,15 @@ export default function SobreNosotros() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="text-center p-8"
+                className="text-center p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10"
               >
                 <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
                   <value.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">
+                <h3 className="text-xl font-bold text-white mb-3">
                   {value.title}
                 </h3>
-                <p className="text-slate-600 dark:text-slate-400">
+                <p className="text-white/70">
                   {value.description}
                 </p>
               </motion.div>

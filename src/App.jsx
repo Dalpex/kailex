@@ -9,7 +9,6 @@ import Servicios from './pages/Servicios'
 import SobreNosotros from './pages/SobreNosotros'
 import Contacto from './pages/Contacto'
 import FAQ from './pages/FAQ'
-import ShaderDemo from './pages/ShaderDemo'
 
 function PageTransition({ children }) {
   return (
@@ -36,7 +35,6 @@ function AnimatedRoutes() {
         <Route path="/sobre-nosotros" element={<SobreNosotros />} />
         <Route path="/contacto" element={<Contacto />} />
         <Route path="/faq" element={<FAQ />} />
-        <Route path="/shader-demo" element={<ShaderDemo />} />
       </Routes>
     </AnimatePresence>
   )

@@ -92,11 +92,11 @@ export default function Productos() {
             animate={{ opacity: 1, y: 0 }}
             className="text-center max-w-4xl mx-auto mb-16"
           >
-            <h1 className="text-5xl md:text-7xl font-bold text-slate-900 dark:text-white mb-6">
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
               Productos que{' '}
               <span className="gradient-text">impulsan</span> tu negocio
             </h1>
-            <p className="text-xl text-slate-600 dark:text-slate-400 leading-relaxed">
+            <p className="text-xl text-white/80 leading-relaxed">
               Soluciones digitales diseñadas para cada etapa de tu crecimiento.
               Desde una landing page hasta plataformas complejas.
             </p>

@@ -93,17 +93,17 @@ function FeatureCard({ icon: Icon, title, description, delay }) {
       viewport={{ once: true }}
       transition={{ delay, duration: 0.5 }}
       whileHover={{ y: -5, scale: 1.02 }}
-      className="group relative p-8 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-indigo-500/50 dark:hover:border-indigo-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/10"
+      className="group relative p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 hover:border-indigo-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/10"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 via-purple-500/5 to-pink-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-purple-500/10 to-pink-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
       <div className="relative">
         <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
           <Icon className="w-6 h-6 text-white" />
         </div>
-        <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-3">
+        <h3 className="text-xl font-semibold text-white mb-3">
           {title}
         </h3>
-        <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+        <p className="text-white/70 leading-relaxed">
           {description}
         </p>
       </div>
@@ -149,7 +149,7 @@ export default function Home() {
                 </span>
               </motion.div>
 
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-slate-900 dark:text-white leading-[1.1] mb-8">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.1] mb-8">
                 Creamos
                 <span className="block gradient-text">
                   experiencias
@@ -157,7 +157,7 @@ export default function Home() {
                 digitales
               </h1>
 
-              <p className="text-xl text-slate-600 dark:text-slate-400 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+              <p className="text-xl text-white/80 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
                 Transformamos ideas en productos digitales excepcionales.
                 Diseño premium, código limpio, resultados extraordinarios.
               </p>
@@ -193,10 +193,10 @@ export default function Home() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.6 + i * 0.1 }}
                   >
-                    <div className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-1">
+                    <div className="text-3xl md:text-4xl font-bold text-white mb-1">
                       {stat.value}
                     </div>
-                    <div className="text-sm text-slate-500 dark:text-slate-500">
+                    <div className="text-sm text-white/70">
                       {stat.label}
                     </div>
                   </motion.div>
@@ -218,10 +218,10 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Por qué elegirnos
             </h2>
-            <p className="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+            <p className="text-xl text-white/80 max-w-2xl mx-auto">
               Combinamos diseño excepcional con tecnología de punta para crear
               productos que marcan la diferencia.
             </p>
