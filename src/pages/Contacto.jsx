@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin, Send, Clock, CheckCircle, MessageCircle } from 'lucide-react'
-import AnimatedBackground from '../components/AnimatedBackground'
+import ShaderBackground from '../components/ShaderBackground'
 
 const WHATSAPP_NUMBER = '5491169605924'
 const CONTACT_EMAIL = 'dalpex@kailex.site'
@@ -53,7 +53,7 @@ export default function Contacto() {
 
   return (
     <div className="relative">
-      <AnimatedBackground variant="dark" />
+      <ShaderBackground variant="dark" />
       {/* Hero */}
       <section className="section-padding relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-indigo-50/50 via-white to-white dark:from-slate-900 dark:via-slate-950 dark:to-slate-950 -z-10" />

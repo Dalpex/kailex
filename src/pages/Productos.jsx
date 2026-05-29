@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowRight, Monitor, Smartphone, ShoppingCart, Laptop } from 'lucide-react'
-import AnimatedBackground from '../components/AnimatedBackground'
+import ShaderBackground from '../components/ShaderBackground'
 
 const products = [
   {
@@ -82,7 +82,7 @@ function ProductCard({ product, index }) {
 export default function Productos() {
   return (
     <div className="relative">
-      <AnimatedBackground variant="gradient" />
+      <ShaderBackground variant="gradient" />
       {/* Hero */}
       <section className="section-padding relative overflow-hidden">
 

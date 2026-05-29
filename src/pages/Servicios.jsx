@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowRight, Palette, Code2, Search, Wrench, BarChart3, MessageSquare } from 'lucide-react'
-import AnimatedBackground from '../components/AnimatedBackground'
+import ShaderBackground from '../components/ShaderBackground'
 
 const services = [
   {
@@ -112,7 +112,7 @@ function ServiceCard({ service, index }) {
 export default function Servicios() {
   return (
     <div className="relative">
-      <AnimatedBackground variant="dark" />
+      <ShaderBackground variant="dark" />
       {/* Hero */}
       <section className="section-padding relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-purple-50/50 via-white to-white dark:from-slate-900 dark:via-slate-950 dark:to-slate-950 -z-10" />

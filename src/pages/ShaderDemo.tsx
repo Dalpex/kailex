@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { MeshGradient, DotOrbit } from "@paper-design/shaders-react"
-import AnimatedBackground from "../components/AnimatedBackground"
+import ShaderBackground from "../components/ShaderBackground"
 
 export default function ShaderDemo() {
   const [intensity, setIntensity] = useState(0.8)
@@ -9,7 +9,7 @@ export default function ShaderDemo() {
 
   return (
     <div className="relative min-h-screen">
-      <AnimatedBackground variant="dark" />
+      <ShaderBackground variant="dark" />
 
       <div className="relative z-10 pt-20">
         {/* Header */}

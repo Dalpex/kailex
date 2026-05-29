@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown, HelpCircle } from 'lucide-react'
-import AnimatedBackground from '../components/AnimatedBackground'
+import ShaderBackground from '../components/ShaderBackground'
 
 const faqs = [
   {
@@ -140,7 +140,7 @@ export default function FAQ() {
 
   return (
     <div className="relative">
-      <AnimatedBackground variant="gradient" />
+      <ShaderBackground variant="gradient" />
       {/* Hero */}
       <section className="section-padding relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-purple-50/50 via-white to-white dark:from-slate-900 dark:via-slate-950 dark:to-slate-950 -z-10" />

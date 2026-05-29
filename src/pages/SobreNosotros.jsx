@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Target, Heart, Users, Lightbulb, Award, TrendingUp } from 'lucide-react'
-import AnimatedBackground from '../components/AnimatedBackground'
+import ShaderBackground from '../components/ShaderBackground'
 
 const values = [
   { icon: Target, title: 'Excelencia', description: 'Buscamos la perfección en cada detalle, desde el primer pixel hasta la última línea de código.' },
@@ -18,7 +18,7 @@ const team = [
 export default function SobreNosotros() {
   return (
     <div className="relative">
-      <AnimatedBackground variant="default" />
+      <ShaderBackground variant="default" />
       {/* Hero */}
       <section className="section-padding relative overflow-hidden min-h-[60vh] flex items-center">
         <div className="absolute inset-0 bg-gradient-to-b from-slate-50 via-white to-white dark:from-slate-900 dark:via-slate-950 dark:to-slate-950 -z-10" />

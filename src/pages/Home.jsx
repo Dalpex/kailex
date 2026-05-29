@@ -2,7 +2,7 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, Sparkles, Zap, Shield, Layers, Code, Palette, Globe } from 'lucide-react'
-import AnimatedBackground from '../components/AnimatedBackground'
+import ShaderBackground from '../components/ShaderBackground'
 
 // Hero 3D Element
 function HeroVisual() {
@@ -125,7 +125,7 @@ export default function Home() {
 
   return (
     <div ref={containerRef} className="relative">
-      <AnimatedBackground variant="default" />
+      <ShaderBackground variant="default" />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center section-padding overflow-hidden">
