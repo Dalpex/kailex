@@ -51,7 +51,7 @@ const faqs = [
       },
       {
         q: '¿Piden un adelanto?',
-        a: 'Sí. Solicitamos el 50% al inicio del proyecto y el 50% restante antes del lanzamiento final. Para proyectos más grandes, podemos estructurar pagos en hitos.'
+        a: 'Sí. Solicitamos el 10% al inicio del proyecto y el 90% restante antes del lanzamiento final. Para proyectos más grandes, podemos estructurar pagos en hitos.'
       },
     ]
   },
