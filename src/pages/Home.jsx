@@ -141,7 +141,7 @@ export default function Home() {
                 </span>
               </motion.div>
 
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.1] mb-8">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-8">
                 Creamos
                 <span className="block gradient-text">
                   experiencias
