@@ -8,8 +8,8 @@ import ShaderBackground from '../components/ShaderBackground'
 function HeroVisual() {
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
-  const rotateX = useTransform(scrollYProgress, [0, 1], [0, 15])
-  const rotateY = useTransform(scrollYProgress, [0, 1], [0, -15])
+  const rotateX = useTransform(scrollYProgress, [0, 1], [0, 10])
+  const rotateY = useTransform(scrollYProgress, [0, 1], [0, -10])
 
   return (
     <motion.div
@@ -17,32 +17,7 @@ function HeroVisual() {
       style={{ rotateX, rotateY }}
       className="relative hidden lg:block perspective-1000"
     >
-      <div className="relative w-full max-w-lg aspect-square">
-        {/* Floating Cards */}
-        <motion.div
-          animate={{ y: [0, -20, 0] }}
-          transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute top-0 right-0 w-64 h-40 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-2xl shadow-2xl shadow-indigo-500/30 flex items-center justify-center"
-        >
-          <Code className="w-12 h-12 text-white/80" />
-        </motion.div>
-
-        <motion.div
-          animate={{ y: [0, 20, 0] }}
-          transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
-          className="absolute bottom-20 left-0 w-56 h-36 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl shadow-2xl shadow-purple-500/30 flex items-center justify-center"
-        >
-          <Palette className="w-10 h-10 text-white/80" />
-        </motion.div>
-
-        <motion.div
-          animate={{ y: [0, -15, 0] }}
-          transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-          className="absolute top-1/2 left-0 w-48 h-32 bg-gradient-to-br from-pink-500 to-rose-500 rounded-2xl shadow-2xl shadow-pink-500/30 flex items-center justify-center"
-        >
-          <Sparkles className="w-9 h-9 text-white/80" />
-        </motion.div>
-
+      <div className="relative w-full max-w-md aspect-square ml-auto">
         {/* Main Card */}
         <div className="absolute inset-0 bg-slate-900 dark:bg-slate-800 rounded-3xl shadow-2xl overflow-hidden border border-slate-700">
           <div className="p-4 border-b border-slate-700 flex items-center space-x-2">
@@ -79,6 +54,23 @@ function HeroVisual() {
             <div className="text-yellow-400">{'}'}</div>
           </div>
         </div>
+
+        {/* Floating Cards - smaller and contained */}
+        <motion.div
+          animate={{ y: [0, -15, 0] }}
+          transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+          className="absolute -top-8 -right-8 w-32 h-24 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-2xl shadow-2xl shadow-indigo-500/30 flex items-center justify-center"
+        >
+          <Code className="w-8 h-8 text-white/80" />
+        </motion.div>
+
+        <motion.div
+          animate={{ y: [0, 15, 0] }}
+          transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
+          className="absolute -bottom-4 -right-4 w-28 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl shadow-2xl shadow-purple-500/30 flex items-center justify-center"
+        >
+          <Palette className="w-7 h-7 text-white/80" />
+        </motion.div>
       </div>
     </motion.div>
   )
