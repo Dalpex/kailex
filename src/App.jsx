@@ -45,7 +45,7 @@ function AnimatedRoutes() {
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-white dark:bg-slate-950 transition-colors duration-300">
+      <div className="min-h-screen bg-transparent dark:bg-transparent transition-colors duration-300">
         <div className="fixed top-4 right-4 z-50">
           <ThemeToggle />
         </div>

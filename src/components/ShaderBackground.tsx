@@ -12,13 +12,18 @@ export default function ShaderBackground({ variant = 'default' }: ShaderBackgrou
   }
 
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden">
-      <MeshGradient
-        className="w-full h-full"
-        colors={colorSchemes[variant]}
-        speed={0.25}
-        backgroundColor="#000000"
-      />
-    </div>
+    <>
+      {/* Capa base oscura */}
+      <div className="fixed inset-0 bg-black -z-50" />
+      {/* Shader */}
+      <div className="fixed inset-0 -z-40 overflow-hidden">
+        <MeshGradient
+          className="w-full h-full"
+          colors={colorSchemes[variant]}
+          speed={0.25}
+          backgroundColor="transparent"
+        />
+      </div>
+    </>
   )
 }
