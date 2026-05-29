@@ -54,10 +54,10 @@ function ProductCard({ product, index }) {
 
       {/* Content */}
       <div className="p-8">
-        <h3 className="text-2xl font-bold text-white mb-4">
+        <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
           {product.title}
         </h3>
-        <p className="text-white/70 mb-6 leading-relaxed">
+        <p className="text-slate-600 dark:text-white/70 mb-6 leading-relaxed">
           {product.description}
         </p>
 
@@ -66,20 +66,20 @@ function ProductCard({ product, index }) {
           {product.features.map((feature) => (
             <li key={feature} className="flex items-center space-x-3">
               <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${product.gradient}`} />
-              <span className="text-white/80">{feature}</span>
+              <span className="text-slate-700 dark:text-white/80">{feature}</span>
             </li>
           ))}
         </ul>
 
         {/* Price */}
-        <div className="mb-6 pb-6 border-b border-white/10">
-          <span className="text-sm text-white/60">Inversión estimada</span>
-          <p className="text-xl font-bold text-white">{product.price}</p>
+        <div className="mb-6 pb-6 border-b border-slate-200 dark:border-white/10">
+          <span className="text-sm text-slate-500 dark:text-white/60">Inversión estimada</span>
+          <p className="text-xl font-bold text-slate-900 dark:text-white">{product.price}</p>
         </div>
 
         <Link
           to="/contacto"
-          className="group inline-flex items-center space-x-2 bg-white text-slate-900 px-6 py-3 rounded-xl font-semibold hover:scale-105 transition-transform"
+          className="group inline-flex items-center space-x-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-6 py-3 rounded-xl font-semibold hover:scale-105 transition-transform"
         >
           <span>Consultar</span>
           <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
