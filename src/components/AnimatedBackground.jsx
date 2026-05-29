@@ -34,7 +34,7 @@ export default function AnimatedBackground({ variant = 'default' }) {
           rotate: [0, 180, 360],
         }}
         transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-        className={`absolute inset-0 bg-gradient-to-br ${v.gradient} bg-[length:200%_200%] blur-3xl opacity-80`}
+        className={`absolute inset-0 bg-gradient-to-br ${v.gradient} bg-[length:200%_200%] blur-3xl opacity-40`}
       />
 
       <motion.div
@@ -44,7 +44,7 @@ export default function AnimatedBackground({ variant = 'default' }) {
           rotate: [360, 180, 0],
         }}
         transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
-        className={`absolute inset-0 bg-gradient-to-bl ${v.gradient2} bg-[length:200%_200%] blur-3xl opacity-80`}
+        className={`absolute inset-0 bg-gradient-to-bl ${v.gradient2} bg-[length:200%_200%] blur-3xl opacity-40`}
       />
 
       <motion.div
@@ -54,7 +54,7 @@ export default function AnimatedBackground({ variant = 'default' }) {
           rotate: [180, 0, 180],
         }}
         transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
-        className={`absolute inset-0 bg-gradient-to-tr ${v.gradient3} bg-[length:200%_200%] blur-3xl opacity-80`}
+        className={`absolute inset-0 bg-gradient-to-tr ${v.gradient3} bg-[length:200%_200%] blur-3xl opacity-40`}
       />
 
       {/* Flowing mesh overlay */}
