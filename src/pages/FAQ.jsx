@@ -43,11 +43,11 @@ const faqs = [
     questions: [
       {
         q: '¿Cuáles son sus precios?',
-        a: 'Nuestros proyectos comienzan en $299 USD para landing pages básicas. Sitios web completos parten desde $599 USD y e-commerce desde $899 USD. Cada proyecto es único, así que la mejor forma de obtener un presupuesto preciso es contactarnos.'
+        a: 'Tenemos opciones para cada necesidad: Landing simple (1 página, info, WhatsApp, Instagram): $100k - $300k ARS | Página profesional chica (inicio, servicios, contacto, galería, animaciones): $300k - $900k ARS | Tienda online / ecommerce: $800k - $3M+ ARS | Sistemas personalizados (turnos, panel admin, login, etc): desde $1M para arriba. Cada proyecto es único, así que la mejor forma de obtener un presupuesto preciso es contactarnos.'
       },
       {
         q: '¿Qué formas de pago aceptan?',
-        a: 'Aceptamos transferencias bancarias, tarjetas de crédito/débito, PayPal, y criptomonedas. Para proyectos en Argentina, también trabajamos en pesos mediante transferencia bancaria.'
+        a: 'Aceptamos transferencias bancarias, tarjetas de crédito/débito, PayPal, y efectivo. Para proyectos en Argentina, también trabajamos en pesos mediante transferencia bancaria.'
       },
       {
         q: '¿Piden un adelanto?',

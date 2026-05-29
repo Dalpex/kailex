@@ -18,7 +18,7 @@ const formFields = [
   { name: 'email', label: 'Email', type: 'email', placeholder: 'tu@email.com' },
   { name: 'telefono', label: 'Teléfono (opcional)', type: 'tel', placeholder: '+54 11 ...' },
   { name: 'servicio', label: 'Servicio de interés', type: 'select', options: ['Landing Page', 'Sitio Web', 'E-commerce', 'Aplicación Web', 'Diseño UI/UX', 'Otro'] },
-  { name: 'presupuesto', label: 'Presupuesto estimado', type: 'select', options: ['$300 - $600', '$600 - $1000', '$1000 - $2000', '$2000+', 'No estoy seguro'] },
+  { name: 'presupuesto', label: 'Presupuesto estimado', type: 'select', options: ['$100k - $300k', '$300k - $900k', '$800k - $3M', '$3M+', 'No estoy seguro'] },
   { name: 'mensaje', label: 'Mensaje', type: 'textarea', placeholder: 'Contanos sobre tu proyecto...', rows: 5 },
 ]
 
