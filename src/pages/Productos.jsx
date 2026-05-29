@@ -6,30 +6,34 @@ import ShaderBackground from '../components/ShaderBackground'
 const products = [
   {
     icon: Monitor,
-    title: 'Landing Pages',
-    description: 'Páginas de alto impacto diseñadas para convertir visitantes en clientes. Perfectas para lanzamientos, productos específicos o campañas.',
-    features: ['Diseño conversivo', 'Copywriting optimizado', 'A/B testing ready', 'Analytics integrado'],
+    title: 'Landing Simple',
+    description: 'Una página de alto impacto con toda tu información esencial. Perfecta para presentar tu negocio, producto o servicio de forma clara y directa.',
+    features: ['1 página de contenido', 'Botón a WhatsApp', 'Enlace a Instagram', 'Diseño responsive', 'Optimización básica SEO', 'Carga ultrarrápida'],
+    price: '$100k - $300k ARS',
     gradient: 'from-indigo-500 to-purple-500',
   },
   {
     icon: Laptop,
-    title: 'Sitios Web',
-    description: 'Sitios completos multi-página con gestión de contenidos. Ideales para empresas, profesionales y marcas personales.',
-    features: ['CMS autoadministrable', 'Multi-página', 'Blog integrado', 'SEO avanzado'],
+    title: 'Página Profesional',
+    description: 'Sitio web completo para empresas y profesionales que buscan establecer una presencia online sólida y profesional con múltiples secciones.',
+    features: ['Inicio + Servicios + Contacto', 'Galería de imágenes/trabajos', 'Animaciones y transiciones', 'Formulario de contacto', 'Integración redes sociales', 'SEO optimizado', 'Panel autoadministrable'],
+    price: '$300k - $900k ARS',
     gradient: 'from-purple-500 to-pink-500',
   },
   {
     icon: ShoppingCart,
-    title: 'E-commerce',
-    description: 'Tiendas online completas con pasarelas de pago, gestión de inventario y panel de administración intuitivo.',
-    features: ['Pagos seguros', 'Gestión de stock', 'Envíos integrados', 'Panel administrativo'],
+    title: 'Tienda Online',
+    description: 'E-commerce completo para vender tus productos online con pasarela de pagos, gestión de inventario y panel de administración intuitivo.',
+    features: ['Catálogo de productos', 'Carrito de compras', 'Pasarela de pagos (MercadoPago, tarjetas)', 'Gestión de stock', 'Cálculo de envíos', 'Panel administrativo', 'Seguridad SSL', 'Seguimiento de pedidos'],
+    price: '$800k - $3M+ ARS',
     gradient: 'from-pink-500 to-rose-500',
   },
   {
     icon: Smartphone,
-    title: 'Aplicaciones Web',
-    description: 'Aplicaciones progresivas y plataformas web a medida con funcionalidades avanzadas y experiencia nativa.',
-    features: ['PWA ready', 'Offline first', 'Sincronización', 'Notificaciones push'],
+    title: 'Sistema Personalizado',
+    description: 'Plataforma web a medida con funcionalidades específicas para tu negocio. Ideal para gestionar turnos, usuarios, o procesos internos.',
+    features: ['Panel de administración', 'Sistema de turnos/reservas', 'Login de usuarios', 'Base de datos personalizada', 'Reportes y estadísticas', 'Funcionalidades a medida', 'Soporte prioritario'],
+    price: 'Desde $1M ARS',
     gradient: 'from-cyan-500 to-blue-500',
   },
 ]
@@ -50,10 +54,10 @@ function ProductCard({ product, index }) {
 
       {/* Content */}
       <div className="p-8">
-        <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
+        <h3 className="text-2xl font-bold text-white mb-4">
           {product.title}
         </h3>
-        <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+        <p className="text-white/70 mb-6 leading-relaxed">
           {product.description}
         </p>
 
@@ -62,16 +66,22 @@ function ProductCard({ product, index }) {
           {product.features.map((feature) => (
             <li key={feature} className="flex items-center space-x-3">
               <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${product.gradient}`} />
-              <span className="text-slate-700 dark:text-slate-300">{feature}</span>
+              <span className="text-white/80">{feature}</span>
             </li>
           ))}
         </ul>
 
+        {/* Price */}
+        <div className="mb-6 pb-6 border-b border-white/10">
+          <span className="text-sm text-white/60">Inversión estimada</span>
+          <p className="text-xl font-bold text-white">{product.price}</p>
+        </div>
+
         <Link
           to="/contacto"
-          className="group inline-flex items-center space-x-2 text-indigo-600 dark:text-indigo-400 font-semibold hover:gap-3 transition-all"
+          className="group inline-flex items-center space-x-2 bg-white text-slate-900 px-6 py-3 rounded-xl font-semibold hover:scale-105 transition-transform"
         >
-          <span>Comenzar</span>
+          <span>Consultar</span>
           <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
         </Link>
       </div>
