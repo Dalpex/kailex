@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin, Send, Clock, CheckCircle, MessageCircle } from 'lucide-react'
 import ShaderBackground from '../components/ShaderBackground'
+import SEO from '../components/SEO'
 
 const WHATSAPP_NUMBER = '5491169605924'
 const CONTACT_EMAIL = 'dalpex@kailex.site'
@@ -53,6 +54,11 @@ export default function Contacto() {
 
   return (
     <div className="relative">
+      <SEO
+        title="Contacto"
+        description="Contactá a Kailex para cotizar tu página web, tienda online o sistema personalizado. Respondemos en menos de 48 horas."
+        path="/contacto"
+      />
       <ShaderBackground variant="dark" />
       {/* Hero */}
       <section className="section-padding relative overflow-hidden">

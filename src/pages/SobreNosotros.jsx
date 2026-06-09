@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Target, Heart, Users, Lightbulb, Award, TrendingUp } from 'lucide-react'
 import ShaderBackground from '../components/ShaderBackground'
+import SEO from '../components/SEO'
 
 const values = [
   { icon: Target, title: 'Excelencia', description: 'Buscamos la perfección en cada detalle, desde el primer pixel hasta la última línea de código.' },
@@ -18,6 +19,11 @@ const team = [
 export default function SobreNosotros() {
   return (
     <div className="relative">
+      <SEO
+        title="Sobre Nosotros"
+        description="Conocé al equipo detrás de Kailex, la agencia de desarrollo web argentina que transforma ideas en productos digitales extraordinarios."
+        path="/sobre-nosotros"
+      />
       <ShaderBackground variant="default" />
       {/* Hero */}
       <section className="section-padding relative overflow-hidden min-h-[60vh] flex items-center">

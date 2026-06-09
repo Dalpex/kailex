@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown, HelpCircle } from 'lucide-react'
 import ShaderBackground from '../components/ShaderBackground'
+import SEO from '../components/SEO'
 
 const faqs = [
   {
@@ -140,6 +141,11 @@ export default function FAQ() {
 
   return (
     <div className="relative">
+      <SEO
+        title="Preguntas Frecuentes"
+        description="Respondemos las dudas más comunes sobre los servicios, precios, tiempos y procesos de Kailex agencia web."
+        path="/faq"
+      />
       <ShaderBackground variant="gradient" />
       {/* Hero */}
       <section className="section-padding relative overflow-hidden">

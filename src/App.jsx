@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
+import { HelmetProvider } from 'react-helmet-async'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ThemeToggle from './components/ThemeToggle'
@@ -42,6 +43,7 @@ function AnimatedRoutes() {
 
 function App() {
   return (
+    <HelmetProvider>
     <Router>
       <div className="min-h-screen bg-transparent dark:bg-transparent transition-colors duration-300">
         <div className="fixed top-4 right-4 z-50">
@@ -56,6 +58,7 @@ function App() {
         <Footer />
       </div>
     </Router>
+    </HelmetProvider>
   )
 }
 

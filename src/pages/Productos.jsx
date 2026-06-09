@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowRight, Monitor, Smartphone, ShoppingCart, Laptop } from 'lucide-react'
 import ShaderBackground from '../components/ShaderBackground'
+import SEO from '../components/SEO'
 
 const products = [
   {
@@ -92,6 +93,11 @@ function ProductCard({ product, index }) {
 export default function Productos() {
   return (
     <div className="relative">
+      <SEO
+        title="Productos y Precios"
+        description="Conocé los planes de Kailex: Landing Simple, Página Profesional, Tienda Online y Sistemas Personalizados. Precios en pesos argentinos."
+        path="/productos"
+      />
       <ShaderBackground variant="gradient" />
       {/* Hero */}
       <section className="section-padding relative overflow-hidden">
