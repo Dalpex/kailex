@@ -10,6 +10,7 @@ import Servicios from './pages/Servicios'
 import SobreNosotros from './pages/SobreNosotros'
 import Contacto from './pages/Contacto'
 import FAQ from './pages/FAQ'
+import ApexFitness from './demos/ApexFitness'
 
 function PageTransition({ children }) {
   return (
@@ -41,23 +42,40 @@ function AnimatedRoutes() {
   )
 }
 
+function AppContent() {
+  const location = useLocation()
+  const isDemo = location.pathname.startsWith('/demo')
+
+  if (isDemo) {
+    return (
+      <Routes location={location} key={location.pathname}>
+        <Route path="/demo/apex" element={<ApexFitness />} />
+      </Routes>
+    )
+  }
+
+  return (
+    <div className="min-h-screen bg-transparent dark:bg-transparent transition-colors duration-300">
+      <div className="fixed top-4 right-4 z-50">
+        <ThemeToggle />
+      </div>
+      <Navbar />
+      <main className="pt-20">
+        <PageTransition>
+          <AnimatedRoutes />
+        </PageTransition>
+      </main>
+      <Footer />
+    </div>
+  )
+}
+
 function App() {
   return (
     <HelmetProvider>
-    <Router>
-      <div className="min-h-screen bg-transparent dark:bg-transparent transition-colors duration-300">
-        <div className="fixed top-4 right-4 z-50">
-          <ThemeToggle />
-        </div>
-        <Navbar />
-        <main className="pt-20">
-          <PageTransition>
-            <AnimatedRoutes />
-          </PageTransition>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+      <Router>
+        <AppContent />
+      </Router>
     </HelmetProvider>
   )
 }
