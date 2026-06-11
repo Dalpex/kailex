@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { HelmetProvider } from 'react-helmet-async'
+import { lazy, Suspense } from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ThemeToggle from './components/ThemeToggle'
@@ -10,7 +11,8 @@ import Servicios from './pages/Servicios'
 import SobreNosotros from './pages/SobreNosotros'
 import Contacto from './pages/Contacto'
 import FAQ from './pages/FAQ'
-import ApexFitness from './demos/ApexFitness'
+
+const ApexFitness = lazy(() => import('./demos/ApexFitness'))
 
 function PageTransition({ children }) {
   return (
@@ -48,9 +50,11 @@ function AppContent() {
 
   if (isDemo) {
     return (
-      <Routes location={location} key={location.pathname}>
-        <Route path="/demo/apex" element={<ApexFitness />} />
-      </Routes>
+      <Suspense fallback={<div className="min-h-screen bg-[#080808]" />}>
+        <Routes location={location} key={location.pathname}>
+          <Route path="/demo/apex" element={<ApexFitness />} />
+        </Routes>
+      </Suspense>
     )
   }
 

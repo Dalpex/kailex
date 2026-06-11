@@ -3,7 +3,7 @@ import { useRef, useEffect, useState, useMemo } from 'react'
 import {
   ArrowRight, Zap, Flame, Trophy, Check, Star,
   Dumbbell, Target, Plus, Users, Shield,
-  Sparkles, ArrowUpRight, Play,
+  Sparkles, ArrowUpRight, Play, BarChart3,
 } from 'lucide-react'
 
 /* ─── Fondo 3D ───────────────────────────────────────── */
