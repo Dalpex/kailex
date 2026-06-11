@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef, useEffect, useState } from 'react'
-import { ArrowRight, Zap, Flame, Trophy, Check, Star, ChevronRight, Dumbbell, Target, Users } from 'lucide-react'
+import { ArrowRight, Zap, Flame, Trophy, Check, Star, ChevronRight, Dumbbell, Target } from 'lucide-react'
 
 function Counter({ to, duration = 2, suffix = '' }) {
   const [count, setCount] = useState(0)
@@ -23,80 +23,80 @@ function Counter({ to, duration = 2, suffix = '' }) {
   return <span ref={ref}>{count.toLocaleString()}{suffix}</span>
 }
 
-const programs = [
+const programas = [
   {
     icon: Dumbbell,
-    title: 'Strength Training',
-    description: 'Progressive overload programs designed by elite coaches to maximize muscle growth and raw power.',
-    tag: 'Most Popular',
+    title: 'Fuerza y Potencia',
+    description: 'Programas de sobrecarga progresiva diseñados por coaches de élite para maximizar el crecimiento muscular y la fuerza bruta.',
+    tag: 'Más Popular',
     accent: 'from-orange-500 to-red-600',
-    features: ['Personalized split routines', 'Real-time form tracking', '1:1 coach check-ins'],
+    features: ['Rutinas split personalizadas', 'Seguimiento de técnica en tiempo real', 'Check-ins 1:1 con tu coach'],
   },
   {
     icon: Flame,
-    title: 'HIIT & Cardio',
-    description: 'High-intensity interval protocols that torch fat fast and boost your cardiovascular endurance.',
-    tag: 'Trending',
+    title: 'HIIT y Cardio',
+    description: 'Protocolos de alta intensidad que queman grasa rápido y potencian tu resistencia cardiovascular al máximo nivel.',
+    tag: 'Tendencia',
     accent: 'from-yellow-500 to-orange-500',
-    features: ['Heart-rate zone training', '20-45 min sessions', 'Equipment-free options'],
+    features: ['Entrenamiento por zonas cardíacas', 'Sesiones de 20 a 45 minutos', 'Opciones sin equipamiento'],
   },
   {
     icon: Target,
-    title: 'Nutrition Plans',
-    description: 'Precision nutrition tailored to your body type, goals, and lifestyle — no guesswork.',
-    tag: 'Complete System',
+    title: 'Plan Nutricional',
+    description: 'Nutrición de precisión adaptada a tu tipo de cuerpo, tus objetivos y tu estilo de vida — sin suposiciones.',
+    tag: 'Sistema Completo',
     accent: 'from-emerald-500 to-teal-500',
-    features: ['Macro-based meal plans', 'Weekly adjustments', 'Supplement guidance'],
+    features: ['Planes basados en macros', 'Ajustes semanales', 'Guía de suplementación'],
   },
 ]
 
-const testimonials = [
+const testimonios = [
   {
-    name: 'Marcus T.',
-    result: 'Lost 22kg in 5 months',
-    quote: 'APEX completely changed how I approach fitness. The coaches are world class and the community keeps you accountable.',
+    name: 'Marcos T.',
+    result: 'Bajó 22kg en 5 meses',
+    quote: 'APEX cambió completamente mi relación con el fitness. Los coaches son de primer nivel y la comunidad te mantiene enfocado.',
     stars: 5,
     avatar: 'MT',
     color: 'from-orange-500 to-red-600',
   },
   {
-    name: 'Sofia R.',
-    result: 'Gained 8kg muscle mass',
-    quote: 'I tried everything before APEX. Their strength program is the only thing that actually delivered results I can see.',
+    name: 'Sofía R.',
+    result: 'Ganó 8kg de masa muscular',
+    quote: 'Probé de todo antes de APEX. Su programa de fuerza es lo único que me dio resultados visibles de verdad.',
     stars: 5,
     avatar: 'SR',
     color: 'from-purple-500 to-pink-600',
   },
   {
-    name: 'James K.',
-    result: 'Cut body fat to 8%',
-    quote: 'The nutrition planning alone is worth it. Paired with HIIT classes, I hit competition shape faster than ever before.',
+    name: 'Julián K.',
+    result: 'Redujo grasa corporal al 8%',
+    quote: 'La planificación nutricional sola ya vale todo. Combinada con las clases de HIIT, llegué a forma de competencia más rápido que nunca.',
     stars: 5,
     avatar: 'JK',
     color: 'from-blue-500 to-cyan-500',
   },
 ]
 
-const plans = [
+const planes = [
   {
     name: 'Starter',
     price: '29',
-    desc: 'Perfect to get started',
-    features: ['Access to gym floor', '2 group classes/week', 'Basic nutrition guide', 'App access'],
+    desc: 'Ideal para comenzar',
+    features: ['Acceso al gimnasio', '2 clases grupales por semana', 'Guía nutricional básica', 'Acceso a la app'],
     highlighted: false,
   },
   {
     name: 'Pro',
     price: '59',
-    desc: 'Most popular choice',
-    features: ['Unlimited classes', 'Monthly 1:1 coaching', 'Full nutrition plan', 'Progress tracking', 'Priority booking'],
+    desc: 'La más elegida',
+    features: ['Clases ilimitadas', 'Coaching 1:1 mensual', 'Plan nutricional completo', 'Seguimiento de progreso', 'Reserva prioritaria'],
     highlighted: true,
   },
   {
     name: 'Elite',
     price: '99',
-    desc: 'For serious athletes',
-    features: ['Everything in Pro', 'Weekly private sessions', 'Custom meal prep', 'Biometric analysis', 'Competition prep', '24/7 coach access'],
+    desc: 'Para atletas serios',
+    features: ['Todo lo del plan Pro', 'Sesiones privadas semanales', 'Plan de alimentación personalizado', 'Análisis biométrico', 'Preparación para competencia', 'Acceso 24/7 al coach'],
     highlighted: false,
   },
 ]
@@ -111,23 +111,21 @@ export default function ApexFitness() {
           AP<span className="text-orange-500">EX</span>
         </span>
         <div className="hidden md:flex items-center gap-8 text-sm text-white/60">
-          <a href="#programs" className="hover:text-white transition-colors">Programs</a>
-          <a href="#results" className="hover:text-white transition-colors">Results</a>
-          <a href="#pricing" className="hover:text-white transition-colors">Pricing</a>
+          <a href="#programas" className="hover:text-white transition-colors">Programas</a>
+          <a href="#resultados" className="hover:text-white transition-colors">Resultados</a>
+          <a href="#precios" className="hover:text-white transition-colors">Precios</a>
         </div>
         <a
-          href="#pricing"
+          href="#precios"
           className="bg-orange-500 hover:bg-orange-400 text-white text-sm font-bold px-5 py-2 rounded-full transition-colors"
         >
-          Join Now
+          Unirme
         </a>
       </nav>
 
       {/* ── HERO ── */}
       <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-24 overflow-hidden">
-        {/* Grid bg */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
-        {/* Glow */}
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-orange-500/15 rounded-full blur-[120px] pointer-events-none" />
 
         <motion.div
@@ -138,41 +136,41 @@ export default function ApexFitness() {
         >
           <div className="inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-semibold px-4 py-2 rounded-full mb-8 tracking-widest uppercase">
             <Zap className="w-3 h-3" />
-            Buenos Aires · 5 Locations
+            Buenos Aires · 5 Sedes
           </div>
 
           <h1 className="text-7xl md:text-[10rem] font-black tracking-tighter leading-none mb-6">
-            <span className="block">WHERE</span>
+            <span className="block">DONDE SE</span>
             <span className="block bg-gradient-to-r from-orange-400 via-red-500 to-orange-600 bg-clip-text text-transparent">
-              CHAMPIONS
+              FORJAN LOS
             </span>
-            <span className="block">ARE MADE</span>
+            <span className="block">CAMPEONES</span>
           </h1>
 
           <p className="text-white/50 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-            Elite training programs, world-class coaches, and a community
-            that refuses to settle for less. Your transformation starts today.
+            Programas de entrenamiento de élite, coaches de primer nivel y una comunidad
+            que no acepta rendirse. Tu transformación empieza hoy.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="#pricing"
+              href="#precios"
               className="group flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-bold px-8 py-4 rounded-full transition-all hover:scale-105 shadow-lg shadow-orange-500/30"
             >
-              Start Free Week
+              Empezar Semana Gratis
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
             <a
-              href="#programs"
+              href="#programas"
               className="flex items-center gap-2 border border-white/10 hover:border-white/30 text-white/70 hover:text-white px-8 py-4 rounded-full transition-all"
             >
-              Explore Programs
+              Ver Programas
               <ChevronRight className="w-4 h-4" />
             </a>
           </div>
         </motion.div>
 
-        {/* Stats row */}
+        {/* Stats */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -180,10 +178,10 @@ export default function ApexFitness() {
           className="relative mt-20 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/5 rounded-2xl overflow-hidden border border-white/5"
         >
           {[
-            { value: 10000, suffix: '+', label: 'Members' },
-            { value: 50, suffix: '+', label: 'Expert Coaches' },
-            { value: 98, suffix: '%', label: 'Success Rate' },
-            { value: 5, suffix: '', label: 'Locations BA' },
+            { value: 10000, suffix: '+', label: 'Miembros' },
+            { value: 50, suffix: '+', label: 'Coaches Expertos' },
+            { value: 98, suffix: '%', label: 'Tasa de Éxito' },
+            { value: 5, suffix: '', label: 'Sedes en BA' },
           ].map((stat) => (
             <div key={stat.label} className="bg-white/[0.02] px-8 py-6 text-center">
               <div className="text-3xl font-black text-white">
@@ -195,8 +193,8 @@ export default function ApexFitness() {
         </motion.div>
       </section>
 
-      {/* ── PROGRAMS ── */}
-      <section id="programs" className="py-32 px-6 md:px-12">
+      {/* ── PROGRAMAS ── */}
+      <section id="programas" className="py-32 px-6 md:px-12">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -204,14 +202,14 @@ export default function ApexFitness() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <p className="text-orange-500 text-sm font-bold tracking-widest uppercase mb-4">Our Programs</p>
+            <p className="text-orange-500 text-sm font-bold tracking-widest uppercase mb-4">Nuestros Programas</p>
             <h2 className="text-4xl md:text-6xl font-black tracking-tight">
-              Train with <span className="text-white/30">purpose.</span>
+              Entrenás con <span className="text-white/30">propósito.</span>
             </h2>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {programs.map((prog, i) => (
+            {programas.map((prog, i) => (
               <motion.div
                 key={prog.title}
                 initial={{ opacity: 0, y: 30 }}
@@ -246,8 +244,8 @@ export default function ApexFitness() {
         </div>
       </section>
 
-      {/* ── RESULTS BANNER ── */}
-      <section id="results" className="py-24 px-6 md:px-12 bg-gradient-to-r from-orange-500 via-red-500 to-orange-600 relative overflow-hidden">
+      {/* ── RESULTADOS BANNER ── */}
+      <section id="resultados" className="py-24 px-6 md:px-12 bg-gradient-to-r from-orange-500 via-red-500 to-orange-600 relative overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.15)_1px,transparent_1px)] bg-[size:40px_40px]" />
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -257,22 +255,22 @@ export default function ApexFitness() {
         >
           <Trophy className="w-12 h-12 text-white/80 mx-auto mb-6" />
           <h2 className="text-4xl md:text-6xl font-black tracking-tight text-white mb-6">
-            Real people.<br />Real results.
+            Personas reales.<br />Resultados reales.
           </h2>
           <p className="text-white/80 text-lg mb-10 max-w-xl mx-auto">
-            Over 10,000 members have transformed their bodies and lives with APEX.
-            Your story starts now.
+            Más de 10.000 personas transformaron su cuerpo y su vida con APEX.
+            Tu historia empieza ahora.
           </p>
           <a
-            href="#pricing"
+            href="#precios"
             className="inline-flex items-center gap-2 bg-white text-orange-600 font-black px-8 py-4 rounded-full hover:scale-105 transition-transform shadow-xl"
           >
-            See Transformation Stories <ArrowRight className="w-5 h-5" />
+            Ver Historias de Transformación <ArrowRight className="w-5 h-5" />
           </a>
         </motion.div>
       </section>
 
-      {/* ── TESTIMONIALS ── */}
+      {/* ── TESTIMONIOS ── */}
       <section className="py-32 px-6 md:px-12">
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -281,14 +279,14 @@ export default function ApexFitness() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <p className="text-orange-500 text-sm font-bold tracking-widest uppercase mb-4">Member Stories</p>
+            <p className="text-orange-500 text-sm font-bold tracking-widest uppercase mb-4">Historias de Miembros</p>
             <h2 className="text-4xl md:text-6xl font-black tracking-tight">
-              They did it.<br /><span className="text-white/30">So can you.</span>
+              Ellos lo lograron.<br /><span className="text-white/30">Vos también podés.</span>
             </h2>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((t, i) => (
+            {testimonios.map((t, i) => (
               <motion.div
                 key={t.name}
                 initial={{ opacity: 0, y: 30 }}
@@ -318,8 +316,8 @@ export default function ApexFitness() {
         </div>
       </section>
 
-      {/* ── PRICING ── */}
-      <section id="pricing" className="py-32 px-6 md:px-12">
+      {/* ── PRECIOS ── */}
+      <section id="precios" className="py-32 px-6 md:px-12">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -327,15 +325,15 @@ export default function ApexFitness() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <p className="text-orange-500 text-sm font-bold tracking-widest uppercase mb-4">Membership</p>
+            <p className="text-orange-500 text-sm font-bold tracking-widest uppercase mb-4">Membresía</p>
             <h2 className="text-4xl md:text-6xl font-black tracking-tight mb-4">
-              Invest in yourself.
+              Invertí en vos mismo.
             </h2>
-            <p className="text-white/40 max-w-md mx-auto">No contracts. Cancel anytime. First week free on all plans.</p>
+            <p className="text-white/40 max-w-md mx-auto">Sin contratos. Cancelá cuando quieras. Primera semana gratis en todos los planes.</p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-6 items-stretch">
-            {plans.map((plan, i) => (
+            {planes.map((plan, i) => (
               <motion.div
                 key={plan.name}
                 initial={{ opacity: 0, y: 30 }}
@@ -350,7 +348,7 @@ export default function ApexFitness() {
               >
                 {plan.highlighted && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs font-black px-5 py-1.5 rounded-full whitespace-nowrap">
-                    MOST POPULAR
+                    MÁS POPULAR
                   </div>
                 )}
                 <div className="mb-8">
@@ -358,7 +356,7 @@ export default function ApexFitness() {
                   <p className="text-white/40 text-sm mb-6">{plan.desc}</p>
                   <div className="flex items-end gap-1">
                     <span className="text-5xl font-black">${plan.price}</span>
-                    <span className="text-white/40 mb-2">/mo</span>
+                    <span className="text-white/40 mb-2">/mes</span>
                   </div>
                 </div>
 
@@ -380,7 +378,7 @@ export default function ApexFitness() {
                       : 'bg-white/5 border border-white/10 text-white hover:bg-white/10'
                   }`}
                 >
-                  Get Started Free
+                  Empezar Gratis
                 </button>
               </motion.div>
             ))}
@@ -388,7 +386,7 @@ export default function ApexFitness() {
         </div>
       </section>
 
-      {/* ── FINAL CTA ── */}
+      {/* ── CTA FINAL ── */}
       <section className="py-32 px-6 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -402,19 +400,19 @@ export default function ApexFitness() {
             <div className="relative">
               <Flame className="w-12 h-12 text-orange-500 mx-auto mb-6" />
               <h2 className="text-4xl md:text-6xl font-black tracking-tight mb-6">
-                Your transformation<br />
+                Tu transformación<br />
                 <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
-                  starts today.
+                  empieza hoy.
                 </span>
               </h2>
               <p className="text-white/50 text-lg mb-10 max-w-md mx-auto">
-                Join 10,000+ members who chose to stop waiting and start winning.
+                Sumáte a más de 10.000 personas que eligieron dejar de esperar y empezar a ganar.
               </p>
               <a
-                href="#pricing"
+                href="#precios"
                 className="group inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-red-500 text-white font-black px-10 py-5 rounded-full text-lg hover:scale-105 transition-transform shadow-2xl shadow-orange-500/30"
               >
-                Claim Free Week
+                Reclamar Semana Gratis
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
@@ -429,13 +427,13 @@ export default function ApexFitness() {
             AP<span className="text-orange-500">EX</span>
           </span>
           <p className="text-white/30 text-sm">
-            © 2025 Apex Fitness. Example built with{' '}
+            © 2025 Apex Fitness. Ejemplo creado con{' '}
             <span className="text-white/50">Kailex</span>.
           </p>
           <div className="flex gap-6 text-sm text-white/30">
-            <a href="#" className="hover:text-white/60 transition-colors">Privacy</a>
-            <a href="#" className="hover:text-white/60 transition-colors">Terms</a>
-            <a href="#" className="hover:text-white/60 transition-colors">Contact</a>
+            <a href="#" className="hover:text-white/60 transition-colors">Privacidad</a>
+            <a href="#" className="hover:text-white/60 transition-colors">Términos</a>
+            <a href="#" className="hover:text-white/60 transition-colors">Contacto</a>
           </div>
         </div>
       </footer>
