@@ -1,4 +1,5 @@
 {
+  "enabledMcpjsonServers": ["21st-dev-magic-mcp"],
   "permissions": {
     "allow": [
       "WebFetch(domain:github.com)",
