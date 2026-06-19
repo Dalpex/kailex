@@ -9,7 +9,6 @@ const products = [
     title: 'Landing Simple',
     description: 'Una página de alto impacto con toda tu información esencial. Perfecta para presentar tu negocio, producto o servicio de forma clara y directa.',
     features: ['1 página de contenido', 'Botón a WhatsApp', 'Enlace a Instagram', 'Diseño responsive', 'Optimización básica SEO', 'Carga ultrarrápida'],
-    price: '$100k - $300k ARS',
     gradient: 'from-indigo-500 to-purple-500',
   },
   {
@@ -17,7 +16,6 @@ const products = [
     title: 'Página Profesional',
     description: 'Sitio web completo para empresas y profesionales que buscan establecer una presencia online sólida y profesional con múltiples secciones.',
     features: ['Inicio + Servicios + Contacto', 'Galería de imágenes/trabajos', 'Animaciones y transiciones', 'Formulario de contacto', 'Integración redes sociales', 'SEO optimizado', 'Panel autoadministrable'],
-    price: '$300k - $900k ARS',
     gradient: 'from-purple-500 to-pink-500',
   },
   {
@@ -25,7 +23,6 @@ const products = [
     title: 'Tienda Online',
     description: 'E-commerce completo para vender tus productos online con pasarela de pagos, gestión de inventario y panel de administración intuitivo.',
     features: ['Catálogo de productos', 'Carrito de compras', 'Pasarela de pagos (MercadoPago, tarjetas)', 'Gestión de stock', 'Cálculo de envíos', 'Panel administrativo', 'Seguridad SSL', 'Seguimiento de pedidos'],
-    price: '$800k - $3M+ ARS',
     gradient: 'from-pink-500 to-rose-500',
   },
   {
@@ -33,7 +30,6 @@ const products = [
     title: 'Sistema Personalizado',
     description: 'Plataforma web a medida con funcionalidades específicas para tu negocio. Ideal para gestionar turnos, usuarios, o procesos internos.',
     features: ['Panel de administración', 'Sistema de turnos/reservas', 'Login de usuarios', 'Base de datos personalizada', 'Reportes y estadísticas', 'Funcionalidades a medida', 'Soporte prioritario'],
-    price: 'Desde $1M ARS',
     gradient: 'from-cyan-500 to-blue-500',
   },
 ]
@@ -71,11 +67,7 @@ function ProductCard({ product, index }) {
           ))}
         </ul>
 
-        {/* Price */}
-        <div className="mb-6 pb-6 border-b border-slate-200 dark:border-white/10">
-          <span className="text-sm text-slate-500 dark:text-white/60">Inversión estimada</span>
-          <p className="text-xl font-bold text-slate-900 dark:text-white">{product.price}</p>
-        </div>
+        <div className="mb-6 pb-6 border-b border-slate-200 dark:border-white/10" />
 
         <Link
           to="/contacto"
