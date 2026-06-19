@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowRight, Palette, Code2, Search, Wrench, BarChart3, MessageSquare } from 'lucide-react'
 import ShaderBackground from '../components/ShaderBackground'
+import SEO from '../components/SEO'
 
 const services = [
   {
@@ -112,6 +113,11 @@ function ServiceCard({ service, index }) {
 export default function Servicios() {
   return (
     <div className="relative">
+      <SEO
+        title="Servicios de Desarrollo Web"
+        description="Kailex ofrece diseño UI/UX, desarrollo frontend y backend, SEO, e-commerce y soporte técnico para tu negocio en Argentina."
+        path="/servicios"
+      />
       <ShaderBackground variant="dark" />
       {/* Hero */}
       <section className="section-padding relative overflow-hidden">

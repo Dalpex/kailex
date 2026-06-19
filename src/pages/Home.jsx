@@ -3,6 +3,7 @@ import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, Sparkles, Zap, Shield, Layers, Code, Palette, Globe } from 'lucide-react'
 import ShaderBackground from '../components/ShaderBackground'
+import SEO from '../components/SEO'
 
 // Hero 3D Element
 function HeroVisual() {
@@ -117,6 +118,10 @@ export default function Home() {
 
   return (
     <div ref={containerRef} className="relative">
+      <SEO
+        description="Kailex es una agencia de desarrollo web en Argentina. Creamos páginas web, tiendas online y sistemas personalizados con diseño premium y tecnología moderna."
+        path="/"
+      />
       <ShaderBackground variant="default" />
 
       {/* Hero Section */}

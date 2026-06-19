@@ -1,5 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
+import { HelmetProvider } from 'react-helmet-async'
+import { lazy, Suspense } from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ThemeToggle from './components/ThemeToggle'
@@ -9,6 +11,8 @@ import Servicios from './pages/Servicios'
 import SobreNosotros from './pages/SobreNosotros'
 import Contacto from './pages/Contacto'
 import FAQ from './pages/FAQ'
+
+const ApexFitness = lazy(() => import('./demos/ApexFitness'))
 
 function PageTransition({ children }) {
   return (
@@ -40,22 +44,43 @@ function AnimatedRoutes() {
   )
 }
 
+function AppContent() {
+  const location = useLocation()
+  const isDemo = location.pathname.startsWith('/demo')
+
+  if (isDemo) {
+    return (
+      <Suspense fallback={<div className="min-h-screen bg-[#080808]" />}>
+        <Routes location={location} key={location.pathname}>
+          <Route path="/demo/apex" element={<ApexFitness />} />
+        </Routes>
+      </Suspense>
+    )
+  }
+
+  return (
+    <div className="min-h-screen bg-transparent dark:bg-transparent transition-colors duration-300">
+      <div className="fixed top-4 right-4 z-50">
+        <ThemeToggle />
+      </div>
+      <Navbar />
+      <main className="pt-20">
+        <PageTransition>
+          <AnimatedRoutes />
+        </PageTransition>
+      </main>
+      <Footer />
+    </div>
+  )
+}
+
 function App() {
   return (
-    <Router>
-      <div className="min-h-screen bg-transparent dark:bg-transparent transition-colors duration-300">
-        <div className="fixed top-4 right-4 z-50">
-          <ThemeToggle />
-        </div>
-        <Navbar />
-        <main className="pt-20">
-          <PageTransition>
-            <AnimatedRoutes />
-          </PageTransition>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <AppContent />
+      </Router>
+    </HelmetProvider>
   )
 }
 
