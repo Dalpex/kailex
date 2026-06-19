@@ -43,16 +43,12 @@ const faqs = [
     category: 'Precios',
     questions: [
       {
-        q: '¿Cuáles son sus precios?',
-        a: 'Tenemos opciones para cada necesidad: Landing simple (1 página, info, WhatsApp, Instagram): $100k - $300k ARS | Página profesional chica (inicio, servicios, contacto, galería, animaciones): $300k - $900k ARS | Tienda online / ecommerce: $800k - $3M+ ARS | Sistemas personalizados (turnos, panel admin, login, etc): desde $1M para arriba. Cada proyecto es único, así que la mejor forma de obtener un presupuesto preciso es contactarnos.'
-      },
-      {
         q: '¿Qué formas de pago aceptan?',
         a: 'Aceptamos transferencias bancarias, tarjetas de crédito/débito, PayPal, y efectivo. Para proyectos en Argentina, también trabajamos en pesos mediante transferencia bancaria.'
       },
       {
         q: '¿Piden un adelanto?',
-        a: 'Sí. Solicitamos el 10% al inicio del proyecto y el 90% restante antes del lanzamiento final. Para proyectos más grandes, podemos estructurar pagos en hitos.'
+        a: 'Sí. Dependiendo del proyecto y su valor, sera el porcentaje del adelanto.'
       },
     ]
   },
