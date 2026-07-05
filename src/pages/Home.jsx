@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Sparkles, Zap, Shield, Layers, Code, Palette, Globe } from 'lucide-react'
+import { ArrowRight, Sparkles, Zap, Shield, Layers, Code, Palette, Globe, ExternalLink, ShoppingCart, LayoutDashboard, Rocket } from 'lucide-react'
 import ShaderBackground from '../components/ShaderBackground'
 import SEO from '../components/SEO'
 
@@ -72,6 +72,55 @@ function HeroVisual() {
         >
           <Palette className="w-7 h-7 text-white/80" />
         </motion.div>
+      </div>
+    </motion.div>
+  )
+}
+
+// Project Card Component
+function ProjectCard({ gradient, icon: Icon, title, description, tags, delay }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay, duration: 0.5 }}
+      whileHover={{ y: -8 }}
+      className="group relative bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-indigo-500/40 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/10"
+    >
+      {/* Visual */}
+      <div className={`relative h-48 ${gradient} overflow-hidden`}>
+        <div className="absolute inset-0 bg-black/20" />
+        {/* Mock UI lines */}
+        <div className="absolute inset-0 p-6 flex flex-col gap-2 opacity-40">
+          <div className="h-2 w-3/4 bg-white/60 rounded-full" />
+          <div className="h-2 w-1/2 bg-white/40 rounded-full" />
+          <div className="h-2 w-2/3 bg-white/30 rounded-full mt-2" />
+          <div className="flex gap-2 mt-2">
+            <div className="h-8 w-16 bg-white/50 rounded-lg" />
+            <div className="h-8 w-20 bg-white/30 rounded-lg" />
+          </div>
+        </div>
+        <div className="absolute bottom-4 right-4 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
+          <Icon className="w-6 h-6 text-white" />
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="p-6">
+        <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-indigo-300 transition-colors">
+          {title}
+        </h3>
+        <p className="text-white/60 text-sm leading-relaxed mb-4">
+          {description}
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {tags.map(tag => (
+            <span key={tag} className="text-xs px-2 py-1 bg-white/10 text-white/70 rounded-full">
+              {tag}
+            </span>
+          ))}
+        </div>
       </div>
     </motion.div>
   )
@@ -229,6 +278,81 @@ export default function Home() {
               <FeatureCard key={feature.title} {...feature} delay={i * 0.1} />
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section className="section-padding relative">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center space-x-2 px-4 py-2 bg-indigo-950/40 rounded-full mb-6"
+            >
+              <Sparkles className="w-4 h-4 text-indigo-400" />
+              <span className="text-sm font-medium text-indigo-400">Nuestro trabajo</span>
+            </motion.div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Proyectos destacados
+            </h2>
+            <p className="text-xl text-white/70 max-w-2xl mx-auto">
+              Algunos de los proyectos que desarrollamos para nuestros clientes.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                gradient: 'bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600',
+                icon: ShoppingCart,
+                title: 'Tienda Online – Moda',
+                description: 'E-commerce completo con catálogo de productos, carrito, pagos y panel de administración.',
+                tags: ['React', 'Node.js', 'Stripe', 'PostgreSQL'],
+                delay: 0,
+              },
+              {
+                gradient: 'bg-gradient-to-br from-cyan-500 via-blue-600 to-indigo-700',
+                icon: LayoutDashboard,
+                title: 'Dashboard SaaS',
+                description: 'Panel de control para gestión de clientes, métricas en tiempo real y reportes automatizados.',
+                tags: ['Next.js', 'TypeScript', 'Tailwind', 'Supabase'],
+                delay: 0.1,
+              },
+              {
+                gradient: 'bg-gradient-to-br from-emerald-500 via-teal-600 to-cyan-700',
+                icon: Rocket,
+                title: 'Landing Page – Startup',
+                description: 'Página de presentación con animaciones avanzadas, optimizada para conversión y SEO.',
+                tags: ['React', 'Framer Motion', 'Vite', 'Vercel'],
+                delay: 0.2,
+              },
+            ].map(project => (
+              <ProjectCard key={project.title} {...project} />
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="text-center mt-12"
+          >
+            <Link
+              to="/contacto"
+              className="inline-flex items-center space-x-2 text-indigo-400 hover:text-indigo-300 font-medium transition-colors"
+            >
+              <span>¿Queres uno así? Hablemos</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </motion.div>
         </div>
       </section>
 
