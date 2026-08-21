@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, ArrowRight } from 'lucide-react'
-import logoLight from '../../logokailexlight-v3.png'
-import logoDark from '../../logokailexdark-v3.png'
+const logoLight = '/logokailexlight-v3.png'
+const logoDark = '/logokailexdark-v3.png'
 
 const navItems = [
   { path: '/', label: 'Home' },
