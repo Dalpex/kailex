@@ -9,6 +9,8 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', 'SF Pro Display', 'system-ui', 'sans-serif'],
+        display: ['"Inter Tight"', 'Inter', 'system-ui', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },
       animation: {
         'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
@@ -36,6 +38,12 @@ export default {
         },
       },
       colors: {
+        ink: '#07061A',
+        panel: '#0F0D2A',
+        bone: '#EEEBFF',
+        mist: '#9C99BF',
+        line: 'rgba(238,235,255,0.09)',
+        wa: '#25D366',
         border: 'hsl(var(--border))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',

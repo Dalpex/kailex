@@ -4,7 +4,8 @@ import { HelmetProvider } from 'react-helmet-async'
 import { lazy, Suspense } from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import ThemeToggle from './components/ThemeToggle'
+import WaIcon from './components/WaIcon'
+import { waLink } from './config'
 import Home from './pages/Home'
 import Productos from './pages/Productos'
 import Servicios from './pages/Servicios'
@@ -59,10 +60,10 @@ function AppContent() {
   }
 
   return (
-    <div className="min-h-screen bg-transparent dark:bg-transparent transition-colors duration-300">
-      <div className="fixed top-4 right-4 z-50">
-        <ThemeToggle />
-      </div>
+    <div className="min-h-screen bg-ink">
+      <a href={waLink()} target="_blank" rel="noopener noreferrer" className="wa-float" aria-label="Escribinos por WhatsApp">
+        <WaIcon className="w-7 h-7" />
+      </a>
       <Navbar />
       <main className="pt-20">
         <PageTransition>

@@ -6,7 +6,7 @@ const DEFAULT_IMAGE = `${BASE_URL}/logokailexlight-v3.png`
 export default function SEO({ title, description, path = '' }) {
   const fullTitle = title
     ? `${title} | Kailex Agencia Web`
-    : 'Kailex | Agencia de Desarrollo Web en Argentina'
+    : 'Kailex | Tu página web en 24 horas'
 
   const url = `${BASE_URL}${path}`
 
