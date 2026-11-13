@@ -1,4 +1,3 @@
-import { Component, lazy, Suspense, useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowRight, ArrowUpRight, Check } from 'lucide-react'
@@ -10,72 +9,6 @@ import Manifesto from '../components/lux/Manifesto'
 import WorkReel from '../components/lux/WorkReel'
 import { EASE, reveal, WaButton, TiltCard, Accordion } from '../components/Showcase'
 import { WHATSAPP_DISPLAY, INSTAGRAM, igLink, waLink } from '../config'
-
-const PhoneScene = lazy(() => import('../components/three/PhoneScene'))
-
-/* ───────────────────────── Hero ───────────────────────── */
-
-// The WebGL phones only load where they will run smoothly: a desktop-class
-// device with a mouse, enough cores/memory, WebGL, and no data saver or reduced
-// motion. Everyone else gets the CSS phone stack (same sites, a fraction of the cost).
-function canRun3D() {
-  if (typeof window === 'undefined') return false
-  const mq = (q) => window.matchMedia(q).matches
-  if (mq('(prefers-reduced-motion: reduce)') || !mq('(min-width: 1024px)') || !mq('(pointer: fine)')) return false
-  const n = navigator
-  if (n.connection?.saveData) return false
-  if ((n.hardwareConcurrency || 4) < 4) return false
-  if (n.deviceMemory && n.deviceMemory < 4) return false
-  try {
-    const c = document.createElement('canvas')
-    return Boolean(c.getContext('webgl2') || c.getContext('webgl'))
-  } catch {
-    return false
-  }
-}
-
-// If WebGL/three.js throws on this machine, fall back to the CSS phones instead of
-// taking the whole page down.
-class SceneBoundary extends Component {
-  constructor(props) {
-    super(props)
-    this.state = { failed: false }
-  }
-  static getDerivedStateFromError() {
-    return { failed: true }
-  }
-  componentDidCatch(err) {
-    console.warn('3D hero disabled:', err)
-  }
-  render() {
-    return this.state.failed ? <PhoneStack /> : this.props.children
-  }
-}
-
-function HeroVisual() {
-  const [rich] = useState(canRun3D)
-  const [ready, setReady] = useState(false)
-
-  // Let the headline finish its entrance before three.js parses and compiles.
-  useEffect(() => {
-    if (!rich) return undefined
-    const t = setTimeout(() => setReady(true), 900)
-    return () => clearTimeout(t)
-  }, [rich])
-
-  if (!rich) return <PhoneStack />
-  const glow = <div className="absolute inset-0 phone-fallback" />
-  if (!ready) return glow
-  return (
-    <SceneBoundary>
-      <Suspense fallback={glow}>
-        <div className="absolute inset-0 fade-in">
-          <PhoneScene />
-        </div>
-      </Suspense>
-    </SceneBoundary>
-  )
-}
 
 function Hero() {
   return (
@@ -115,7 +48,7 @@ function Hero() {
         </div>
 
         <div className="lg:col-span-5 relative h-[460px] sm:h-[560px] lg:h-[760px] -mx-4 lg:-mr-24 xl:-ml-24">
-          <HeroVisual />
+          <PhoneStack />
         </div>
       </div>
     </section>
