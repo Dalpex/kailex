@@ -199,7 +199,7 @@ function Price() {
                 ))}
               </ul>
               <div className="px-8 md:px-10 pb-8 md:pb-10 flex flex-col sm:flex-row sm:items-center justify-between gap-5">
-                <p className="mono text-mist">+ dominio propio · aprox. USD 20 al año</p>
+                <p className="mono text-mist">+ dominio propio · aprox. USD 17 al año</p>
                 <WaButton text="Hola Kailex! Quiero mi web de USD 35">La quiero</WaButton>
               </div>
             </div>
@@ -280,7 +280,7 @@ function Work() {
 
 const FAQS = [
   { q: '¿Qué incluye la web de USD 35?', a: 'Una página completa para tu negocio: quiénes son, qué ofrecés, precios, horarios, ubicación, fotos, tus redes y un botón directo a tu WhatsApp. Adaptada a celular y lista para aparecer en Google.' },
-  { q: '¿Hay que pagar todos los meses?', a: 'No. Es un solo pago. Lo único que se renueva es el dominio (tunegocio.com), que sale aprox. USD 20 al año y queda registrado a tu nombre.' },
+  { q: '¿Hay que pagar todos los meses?', a: 'No. La landing es un solo pago. Lo único que se renueva es el dominio (tunegocio.com), que sale aprox. USD 17 al año y queda registrado a tu nombre.' },
   { q: '¿De verdad está en 24 horas?', a: 'Sí, una web simple está lista en un día desde que tenemos tu información (logo, fotos y textos). Si no tenés textos, te ayudamos a armarlos.' },
   { q: '¿Trabajan con negocios de otros países?', a: 'Sí. Todo se hace online por WhatsApp, así que no importa dónde estés.' },
   { q: '¿Y si necesito algo más grande?', a: 'Hacemos tiendas online, sistemas de turnos y proyectos a medida. Escribinos y lo cotizamos según lo que necesites.' },

@@ -6,8 +6,8 @@ const GROUPS = [
   {
     title: 'Precio',
     items: [
-      { q: '¿Cuánto cuesta una web?', a: 'La landing para tu negocio sale USD 35, pago único. Webs con varias secciones, tiendas online y sistemas a medida se cotizan según lo que necesites.' },
-      { q: '¿Hay que pagar todos los meses?', a: 'No. Pagás una vez y la web es tuya. Lo único que se renueva es el dominio (tunegocio.com), aprox. USD 20 al año, registrado a tu nombre.' },
+      { q: '¿Cuánto cuesta una web?', a: 'La landing sale USD 35 y la web profesional USD 45, las dos con pago único. La tienda online sale USD 40 más USD 30 al año. Los sistemas a medida se cotizan según lo que necesites. En todos los casos el dominio (.com) va aparte: es anual y sale aprox. USD 17.' },
+      { q: '¿Hay que pagar todos los meses?', a: 'No en la landing ni en la web profesional: pagás una vez y la web es tuya. La tienda online tiene USD 30 al año. Aparte se renueva el dominio (tunegocio.com), aprox. USD 17 al año, registrado a tu nombre.' },
       { q: '¿Cómo pago?', a: 'Te pasamos las opciones de pago por WhatsApp según tu país.' },
     ],
   },

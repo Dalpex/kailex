@@ -538,3 +538,11 @@
   border-color: transparent;
   background: linear-gradient(135deg, #6366F1, #A855F7 55%, #EC4899);
 }
+
+.plan-domain {
+  margin-top: 1.75rem;
+  padding-top: 1rem;
+  border-top: 1px dashed rgba(238,235,255,.14);
+  color: #9C99BF;
+  line-height: 1.6;
+}

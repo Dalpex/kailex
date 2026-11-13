@@ -7,7 +7,7 @@ import { reveal, WaButton, TiltCard } from '../components/Showcase'
 const SERVICES = [
   { icon: LayoutTemplate, title: 'Landing para tu negocio', text: 'Una página completa con todo lo que tu cliente necesita saber y un botón directo a tu WhatsApp. USD 35, lista en 24 horas.' },
   { icon: PenTool, title: 'Diseño a medida', text: 'Cada web se diseña para su rubro: colores, fotos y textos que se sienten como tu negocio, no como una plantilla.' },
-  { icon: ShoppingBag, title: 'Tiendas y sistemas', text: 'Catálogos con carrito, pagos online, turnos o paneles para tu equipo. Lo cotizamos según lo que necesites.' },
+  { icon: ShoppingBag, title: 'Tiendas y sistemas', text: 'Tienda online con carrito y pagos desde USD 40 + USD 30 al año. Turnos o paneles para tu equipo, a cotizar.' },
   { icon: Search, title: 'Aparecer en Google', text: 'Cada web sale preparada para buscadores: títulos, descripciones, velocidad y datos de tu negocio.' },
   { icon: Globe, title: 'Dominio y publicación', text: 'Te ayudamos a registrar tunegocio.com a tu nombre y dejamos la web online.' },
   { icon: RefreshCw, title: 'Rediseño', text: '¿Ya tenés web pero quedó vieja? La renovamos para que se vea bien en el celular y te traiga consultas.' },

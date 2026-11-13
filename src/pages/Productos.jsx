@@ -15,19 +15,20 @@ const PLANS = [
   },
   {
     name: 'Web profesional',
-    price: 'A cotizar',
-    note: 'Varias secciones',
+    price: 'USD 45',
+    note: 'Pago único · varias secciones',
     text: 'Para negocios que necesitan más espacio: servicios en detalle, galería de trabajos y formulario.',
     features: ['Varias páginas o secciones', 'Galería de trabajos', 'Formulario de contacto', 'Animaciones a medida', 'Integración con redes'],
-    msg: 'Hola Kailex! Quiero cotizar una web profesional',
+    msg: 'Hola Kailex! Quiero la Web profesional de USD 45',
   },
   {
     name: 'Tienda online',
-    price: 'A cotizar',
+    price: 'USD 40',
+    extra: '+ USD 30 al año',
     note: 'Vendé por internet',
     text: 'Catálogo de productos con carrito y pagos online, para vender sin depender de las redes.',
     features: ['Catálogo de productos', 'Carrito de compras', 'Pagos online', 'Gestión de stock', 'Panel para cargar productos'],
-    msg: 'Hola Kailex! Quiero cotizar una tienda online',
+    msg: 'Hola Kailex! Quiero la Tienda online de USD 40',
   },
   {
     name: 'Sistema a medida',
@@ -49,6 +50,7 @@ function PlanCard({ p, i }) {
             {p.featured ? <span className="plan-tag mono">Más pedido</span> : null}
           </div>
           <p className={`mt-6 font-display font-extrabold tracking-tight ${p.featured ? 'text-5xl text-grad' : 'text-3xl'}`}>{p.price}</p>
+          {p.extra ? <p className="text-lg font-bold text-bone mt-1">{p.extra}</p> : null}
           <p className="mono text-mist mt-2">{p.note}</p>
           <p className="text-mist mt-6 leading-relaxed">{p.text}</p>
           <ul className="mt-6 space-y-3 flex-1">
@@ -59,6 +61,7 @@ function PlanCard({ p, i }) {
               </li>
             ))}
           </ul>
+          <p className="plan-domain mono">+ Dominio (.com) aparte · anual · aprox. USD 17</p>
           <WaButton text={p.msg} className={`mt-8 ${p.featured ? '' : 'btn-wa-quiet'}`}>
             {p.featured ? 'La quiero' : 'Consultar'}
           </WaButton>
@@ -100,7 +103,7 @@ export default function Productos() {
             <PlanCard key={p.name} p={p} i={i} />
           ))}
         </div>
-        <p className="container-custom mono text-mist mt-8">+ dominio propio (tunegocio.com) · aprox. USD 20 al año, a tu nombre</p>
+        <p className="container-custom mono text-mist mt-8">En todos los planes el dominio (tunegocio.com) se paga aparte: es anual, sale aprox. USD 17 y queda a tu nombre.</p>
       </section>
 
       <section className="section border-t border-line">
