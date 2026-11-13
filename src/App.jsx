@@ -7,6 +7,8 @@ import Footer from './components/Footer'
 import WaIcon from './components/WaIcon'
 import { waLink } from './config'
 import Home from './pages/Home'
+import Cursor from './components/lux/Cursor'
+import ScrollProgress from './components/lux/ScrollProgress'
 
 const Productos = lazy(() => import('./pages/Productos'))
 const Servicios = lazy(() => import('./pages/Servicios'))
@@ -61,6 +63,9 @@ function AppContent() {
 
   return (
     <div className="min-h-screen bg-ink">
+      <ScrollProgress />
+      <Cursor />
+      <div className="grain" aria-hidden="true" />
       <a href={waLink()} target="_blank" rel="noopener noreferrer" className="wa-float" aria-label="Escribinos por WhatsApp">
         <WaIcon className="w-7 h-7" />
       </a>

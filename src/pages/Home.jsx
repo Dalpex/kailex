@@ -6,7 +6,9 @@ import IgIcon from '../components/IgIcon'
 import SEO from '../components/SEO'
 import PhoneStack from '../components/PhoneStack'
 import SiteBuilder from '../components/SiteBuilder'
-import { EASE, reveal, WaButton, TiltCard, WORK, WorkCard, Accordion } from '../components/Showcase'
+import Manifesto from '../components/lux/Manifesto'
+import WorkReel from '../components/lux/WorkReel'
+import { EASE, reveal, WaButton, TiltCard, Accordion } from '../components/Showcase'
 import { WHATSAPP_DISPLAY, INSTAGRAM, igLink, waLink } from '../config'
 
 const PhoneScene = lazy(() => import('../components/three/PhoneScene'))
@@ -86,9 +88,9 @@ function Hero() {
           </p>
 
           <h1 className="display mt-6">
-            <span className="block rise" style={{ '--d': '.08s' }}>Tu página web,</span>
-            <span className="block rise" style={{ '--d': '.16s' }}>lista en</span>
-            <span className="block rise" style={{ '--d': '.24s' }}><span className="text-grad">24 horas.</span></span>
+            <span className="line"><span className="line-in" style={{ '--d': '.05s' }}>Tu página web,</span></span>
+            <span className="line"><span className="line-in" style={{ '--d': '.15s' }}>lista en</span></span>
+            <span className="line"><span className="line-in" style={{ '--d': '.25s' }}><span className="text-grad">24 horas.</span></span></span>
           </h1>
 
           <p className="lead mt-7 max-w-xl rise" style={{ '--d': '.4s' }}>
@@ -253,29 +255,6 @@ function Process() {
   )
 }
 
-/* ───────────────────────── Work ───────────────────────── */
-
-function Work() {
-  return (
-    <section id="trabajos" className="section scroll-mt-24">
-      <div className="container-custom">
-        <motion.div {...reveal()} className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <div>
-            <p className="eyebrow">Trabajos</p>
-            <h2 className="h2 mt-5">Negocios reales,<br />webs reales.</h2>
-          </div>
-          <p className="lead max-w-sm">Cada web se diseña para su rubro. Ninguna plantilla, ninguna igual a otra.</p>
-        </motion.div>
-        <div className="mt-16 grid lg:grid-cols-2 gap-16 lg:gap-10">
-          {WORK.map((w, i) => (
-            <WorkCard key={w.name} w={w} i={i} />
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
 /* ───────────────────────── FAQ ───────────────────────── */
 
 const FAQS = [
@@ -338,10 +317,11 @@ export default function Home() {
       />
       <Hero />
       <Rubros />
+      <Manifesto />
       <SiteBuilder />
+      <WorkReel />
       <Price />
       <Process />
-      <Work />
       <Faq />
       <FinalCta />
     </>
