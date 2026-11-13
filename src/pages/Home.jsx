@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useState } from 'react'
+import { Component, lazy, Suspense, useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowRight, ArrowUpRight, Check } from 'lucide-react'
@@ -32,6 +32,24 @@ function canRun3D() {
   }
 }
 
+// If WebGL/three.js throws on this machine, fall back to the CSS phones instead of
+// taking the whole page down.
+class SceneBoundary extends Component {
+  constructor(props) {
+    super(props)
+    this.state = { failed: false }
+  }
+  static getDerivedStateFromError() {
+    return { failed: true }
+  }
+  componentDidCatch(err) {
+    console.warn('3D hero disabled:', err)
+  }
+  render() {
+    return this.state.failed ? <PhoneStack /> : this.props.children
+  }
+}
+
 function HeroVisual() {
   const [rich] = useState(canRun3D)
   const [ready, setReady] = useState(false)
@@ -47,11 +65,13 @@ function HeroVisual() {
   const glow = <div className="absolute inset-0 phone-fallback" />
   if (!ready) return glow
   return (
-    <Suspense fallback={glow}>
-      <div className="absolute inset-0 fade-in">
-        <PhoneScene />
-      </div>
-    </Suspense>
+    <SceneBoundary>
+      <Suspense fallback={glow}>
+        <div className="absolute inset-0 fade-in">
+          <PhoneScene />
+        </div>
+      </Suspense>
+    </SceneBoundary>
   )
 }
 
