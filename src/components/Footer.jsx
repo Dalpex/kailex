@@ -19,7 +19,7 @@ export default function Footer() {
       <div className="container-custom pt-20 pb-10">
         <div className="grid md:grid-cols-12 gap-12">
           <div className="md:col-span-5">
-            <img src={logo} alt="Kailex" className="h-9 w-auto" />
+            <img draggable={false} src={logo} alt="Kailex" className="h-9 w-auto" />
             <p className="text-mist mt-6 max-w-sm leading-relaxed">
               Páginas web para negocios que quieren que los encuentren, los elijan y les escriban. Desde Buenos Aires para toda Latinoamérica.
             </p>

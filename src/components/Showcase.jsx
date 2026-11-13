@@ -107,10 +107,10 @@ export function WorkCard({ w, i }) {
             <div className="work-bar">
               <span /><span /><span />
             </div>
-            <img src={w.desktop} alt={`Web de ${w.name} en computadora`} loading="lazy" className="w-full aspect-[16/10] object-cover object-top" />
+            <img draggable={false} src={w.desktop} alt={`Web de ${w.name} en computadora`} loading="lazy" className="w-full aspect-[16/10] object-cover object-top" />
           </div>
           <div className="work-phone" style={{ transform: 'translateZ(70px)' }}>
-            <img src={w.mobile} alt={`Web de ${w.name} en celular`} loading="lazy" className="w-full h-full object-cover object-top" />
+            <img draggable={false} src={w.mobile} alt={`Web de ${w.name} en celular`} loading="lazy" className="w-full h-full object-cover object-top" />
           </div>
         </Wrapper>
       </TiltCard>

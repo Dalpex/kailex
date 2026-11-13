@@ -201,8 +201,10 @@
 
 /* Smooth focus states */
 *:focus-visible {
-  @apply outline-none ring-2 ring-indigo-500 ring-offset-2 dark:ring-offset-slate-950;
+  outline: 2px solid #a855f7;
+  outline-offset: 3px;
 }
+*:focus:not(:focus-visible) { outline: none; }
 
 /* ───────────── Kailex 2026 ───────────── */
 @layer components {
@@ -546,3 +548,12 @@
   color: #9C99BF;
   line-height: 1.6;
 }
+
+/* No ghost-image dragging, no long-press callouts on pictures */
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+a, button { -webkit-tap-highlight-color: transparent; }
+html { -webkit-text-size-adjust: 100%; }

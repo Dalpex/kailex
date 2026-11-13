@@ -40,7 +40,7 @@ function Device({ ph }) {
         <i className="dv-btn dv-btn-power" />
         <div className="dv-bezel">
           <div className="dv-screen">
-            <img
+            <img draggable={false}
               src={ph.src}
               alt=""
               width="780"

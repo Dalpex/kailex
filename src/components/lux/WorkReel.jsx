@@ -26,16 +26,16 @@ function Heading() {
   )
 }
 
-function ReelCard({ w, i }) {
+function ReelCard({ w, i, onFocus }) {
   return (
-    <a href={w.url} target="_blank" rel="noopener noreferrer" className="reel-card group" data-cursor="Ver web">
+    <a onFocus={onFocus} href={w.url} target="_blank" rel="noopener noreferrer" className="reel-card group" data-cursor="Ver web">
       <div className={`reel-stage bg-gradient-to-br ${w.tone} to-transparent`}>
         <div className="reel-browser">
           <div className="work-bar"><span /><span /><span /></div>
-          <img src={w.desktop} alt={`Web de ${w.name} en computadora`} loading="lazy" decoding="async" />
+          <img draggable={false} src={w.desktop} alt={`Web de ${w.name} en computadora`} loading="lazy" decoding="async" />
         </div>
         <div className="reel-phone">
-          <img src={w.mobile} alt={`Web de ${w.name} en celular`} loading="lazy" decoding="async" />
+          <img draggable={false} src={w.mobile} alt={`Web de ${w.name} en celular`} loading="lazy" decoding="async" />
         </div>
       </div>
       <div className="mt-7 flex items-start justify-between gap-6">
@@ -77,9 +77,18 @@ function Reel() {
     }
   }, [distance, x, scrollYProgress])
 
+  // Keyboard users: tabbing to a card scrolls the page so that card slides into view.
+  const focusCard = (e) => {
+    const card = e.currentTarget
+    const d = distance.get()
+    const want = Math.min(d, Math.max(0, card.offsetLeft - (window.innerWidth - card.offsetWidth) / 2))
+    const top = section.current.getBoundingClientRect().top + window.scrollY
+    window.scrollTo({ top: top + want, behavior: 'instant' })
+  }
+
   return (
     <section id="trabajos" ref={section} className="relative" style={{ height }}>
-      <div className="sticky top-0 h-screen overflow-hidden flex flex-col justify-center">
+      <div className="sticky top-0 h-screen overflow-clip flex flex-col justify-center">
         <motion.div ref={track} style={{ x }} className="reel-track">
           <div className="reel-intro">
             <Heading />
@@ -87,7 +96,7 @@ function Reel() {
             <p className="mono text-mist mt-10 flex items-center gap-3">Scrolleá <span className="reel-hint" /></p>
           </div>
           {WORK.map((w, i) => (
-            <ReelCard key={w.name} w={w} i={i} />
+            <ReelCard key={w.name} w={w} i={i} onFocus={focusCard} />
           ))}
         </motion.div>
         <div className="container-custom w-full mt-10">

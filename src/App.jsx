@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { HelmetProvider } from 'react-helmet-async'
-import { lazy, Suspense } from 'react'
+import { lazy, Suspense, useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import WaIcon from './components/WaIcon'
@@ -28,6 +28,16 @@ function PageTransition({ children }) {
       {children}
     </motion.div>
   )
+}
+
+// New page starts at the top (unless the link points at a #section).
+function ScrollToTop() {
+  const { pathname, hash } = useLocation()
+  useEffect(() => {
+    if (hash) return
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+  }, [pathname, hash])
+  return null
 }
 
 function AnimatedRoutes() {
@@ -63,6 +73,7 @@ function AppContent() {
 
   return (
     <div className="min-h-screen bg-ink">
+      <ScrollToTop />
       <ScrollProgress />
       <Cursor />
       <div className="grain" aria-hidden="true" />

@@ -31,6 +31,18 @@ export default function Navbar() {
     setIsMobileMenuOpen(false)
   }, [location])
 
+  useEffect(() => {
+    if (!isMobileMenuOpen) return undefined
+    const prev = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    const onKey = (e) => e.key === 'Escape' && setIsMobileMenuOpen(false)
+    window.addEventListener('keydown', onKey)
+    return () => {
+      document.body.style.overflow = prev
+      window.removeEventListener('keydown', onKey)
+    }
+  }, [isMobileMenuOpen])
+
   return (
     <>
       <motion.nav
@@ -44,7 +56,7 @@ export default function Navbar() {
         <div className="container-custom">
           <div className="flex items-center justify-between h-20">
             <Link to="/" className="flex items-center" aria-label="Kailex, inicio">
-              <img src={logo} alt="Kailex" className="h-9 w-auto" />
+              <img draggable={false} src={logo} alt="Kailex" className="h-9 w-auto" />
             </Link>
 
             <div className="hidden md:flex items-center gap-1">
