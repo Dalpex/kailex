@@ -6,6 +6,10 @@
 .fade-in { animation: fade-in 1.2s ease both; }
 @keyframes fade-in { from { opacity: 0; } }
 
+/* Page change: CSS-only so it can never get stuck waiting on JS */
+.page-in { animation: page-in .4s cubic-bezier(.22,1,.36,1) backwards; }
+@keyframes page-in { from { opacity: 0; transform: translate3d(0, 14px, 0); } }
+
 /* opacity + transform only: runs on the compositor even while the main thread is busy */
 @keyframes rise {
   from { opacity: 0; transform: translate3d(0, .5em, 0); }
@@ -442,7 +446,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .rise, .fade-in, .dslot-float, .dstack-rig, .dv-screen img, .mock-caret { animation: none !important; }
+  .rise, .fade-in, .page-in, .dslot-float, .dstack-rig, .dv-screen img, .mock-caret { animation: none !important; }
 }
 
 /* ───────── Hero headline: lines slide up out of a mask ───────── */
