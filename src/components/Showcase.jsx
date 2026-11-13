@@ -76,6 +76,24 @@ export const WORK = [
     url: 'https://tilonailsandbody.com.ar',
     tone: 'from-lime-400/20',
   },
+  {
+    name: 'Línea de Tres',
+    kind: 'Tienda online · Indumentaria',
+    text: 'Remeras y buzos de fútbol y rock nacional, con carrito, pago con Mercado Pago y envíos a todo el país.',
+    desktop: '/work/lineadtres-desktop.jpg',
+    mobile: '/work/lineadtres-screen.jpg',
+    url: 'https://lineadtres.com',
+    tone: 'from-orange-300/20',
+  },
+  {
+    name: 'VipSale',
+    kind: 'Tienda online · Vajilla',
+    text: 'Porcelana Tsuji con catálogo por categorías, compra con Mercado Pago y envío cotizado según el peso.',
+    desktop: '/work/vipsale-desktop.jpg',
+    mobile: '/work/vipsale-screen.jpg',
+    url: 'https://vipsale.com.ar',
+    tone: 'from-rose-700/25',
+  },
 ]
 
 export function WorkCard({ w, i }) {
