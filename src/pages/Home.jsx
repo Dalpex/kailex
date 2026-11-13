@@ -1,10 +1,11 @@
-import { lazy, Suspense } from 'react'
+import { lazy, Suspense, useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowRight, ArrowUpRight, Check } from 'lucide-react'
 import IgIcon from '../components/IgIcon'
 import SEO from '../components/SEO'
-import WaIcon from '../components/WaIcon'
+import PhoneStack from '../components/PhoneStack'
+import SiteBuilder from '../components/SiteBuilder'
 import { EASE, reveal, WaButton, TiltCard, WORK, WorkCard, Accordion } from '../components/Showcase'
 import { WHATSAPP_DISPLAY, INSTAGRAM, igLink, waLink } from '../config'
 
@@ -12,83 +13,87 @@ const PhoneScene = lazy(() => import('../components/three/PhoneScene'))
 
 /* ───────────────────────── Hero ───────────────────────── */
 
+// The WebGL phones only load where they will run smoothly: a desktop-class
+// device with a mouse, enough cores/memory, WebGL, and no data saver or reduced
+// motion. Everyone else gets the CSS phone stack (same sites, a fraction of the cost).
+function canRun3D() {
+  if (typeof window === 'undefined') return false
+  const mq = (q) => window.matchMedia(q).matches
+  if (mq('(prefers-reduced-motion: reduce)') || !mq('(min-width: 1024px)') || !mq('(pointer: fine)')) return false
+  const n = navigator
+  if (n.connection?.saveData) return false
+  if ((n.hardwareConcurrency || 4) < 4) return false
+  if (n.deviceMemory && n.deviceMemory < 4) return false
+  try {
+    const c = document.createElement('canvas')
+    return Boolean(c.getContext('webgl2') || c.getContext('webgl'))
+  } catch {
+    return false
+  }
+}
+
+function HeroVisual() {
+  const [rich] = useState(canRun3D)
+  const [ready, setReady] = useState(false)
+
+  // Let the headline finish its entrance before three.js parses and compiles.
+  useEffect(() => {
+    if (!rich) return undefined
+    const t = setTimeout(() => setReady(true), 900)
+    return () => clearTimeout(t)
+  }, [rich])
+
+  if (!rich) return <PhoneStack />
+  const glow = <div className="absolute inset-0 phone-fallback" />
+  if (!ready) return glow
+  return (
+    <Suspense fallback={glow}>
+      <div className="absolute inset-0 fade-in">
+        <PhoneScene />
+      </div>
+    </Suspense>
+  )
+}
+
 function Hero() {
   return (
     <section className="relative overflow-hidden">
       <div className="hero-glow" aria-hidden="true" />
       <div className="container-custom relative grid lg:grid-cols-12 gap-6 lg:gap-0 items-center min-h-[calc(100svh-5rem)] pt-6 lg:pt-0">
         <div className="lg:col-span-7 relative z-10">
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: EASE }}
-            className="eyebrow"
-          >
+          <p className="eyebrow rise" style={{ '--d': '0s' }}>
             <span className="live-dot" /> Estudio web · Buenos Aires → toda Latinoamérica
-          </motion.p>
+          </p>
 
           <h1 className="display mt-6">
-            {['Tu página web,', 'lista en'].map((line, i) => (
-              <motion.span
-                key={line}
-                className="block"
-                initial={{ opacity: 0, y: '0.5em', filter: 'blur(8px)' }}
-                animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                transition={{ duration: 0.9, delay: 0.1 + i * 0.1, ease: EASE }}
-              >
-                {line}
-              </motion.span>
-            ))}
-            <motion.span
-              className="block text-grad"
-              initial={{ opacity: 0, y: '0.5em', filter: 'blur(8px)' }}
-              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-              transition={{ duration: 0.9, delay: 0.3, ease: EASE }}
-            >
-              24 horas.
-            </motion.span>
+            <span className="block rise" style={{ '--d': '.08s' }}>Tu página web,</span>
+            <span className="block rise" style={{ '--d': '.16s' }}>lista en</span>
+            <span className="block rise" style={{ '--d': '.24s' }}><span className="text-grad">24 horas.</span></span>
           </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5, ease: EASE }}
-            className="lead mt-7 max-w-xl"
-          >
+          <p className="lead mt-7 max-w-xl rise" style={{ '--d': '.4s' }}>
             Diseñamos la web de tu negocio para que te encuentren, te elijan y te escriban.{' '}
             <strong className="text-bone font-semibold">USD 35, pago único.</strong> Sin mensualidades.
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.62, ease: EASE }}
-            className="mt-9 flex flex-col sm:flex-row gap-3"
-          >
+          <div className="mt-9 flex flex-col sm:flex-row gap-3 rise" style={{ '--d': '.5s' }}>
             <WaButton>Pedir mi web por WhatsApp</WaButton>
-            <a href="#trabajos" className="btn-ghost">
-              Ver trabajos <ArrowRight className="w-4 h-4" />
+            <a href="#probala" className="btn-ghost">
+              Probá cómo quedaría la tuya <ArrowRight className="w-4 h-4" />
             </a>
-          </motion.div>
+          </div>
 
-          <motion.ul
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="mt-10 flex flex-wrap gap-x-6 gap-y-2 mono text-mist"
-          >
+          <ul className="mt-10 flex flex-wrap gap-x-6 gap-y-2 mono text-mist rise" style={{ '--d': '.62s' }}>
             <li>Pago único</li>
             <li aria-hidden="true">/</li>
             <li>Dominio a tu nombre</li>
             <li aria-hidden="true">/</li>
             <li>Botón a tu WhatsApp</li>
-          </motion.ul>
+          </ul>
         </div>
 
-        <div className="lg:col-span-5 relative h-[480px] sm:h-[560px] lg:h-[760px] -mx-4 lg:-ml-24 lg:-mr-24">
-          <Suspense fallback={<div className="absolute inset-0 phone-fallback" />}>
-            <PhoneScene />
-          </Suspense>
+        <div className="lg:col-span-5 relative h-[460px] sm:h-[560px] lg:h-[760px] -mx-4 lg:-mr-24 xl:-ml-24">
+          <HeroVisual />
         </div>
       </div>
     </section>
@@ -313,6 +318,7 @@ export default function Home() {
       />
       <Hero />
       <Rubros />
+      <SiteBuilder />
       <Price />
       <Process />
       <Work />

@@ -281,7 +281,6 @@
     background:
       radial-gradient(closest-side, rgba(168,85,247,.32), transparent 70%),
       radial-gradient(closest-side at 70% 70%, rgba(236,72,153,.18), transparent 70%);
-    filter: blur(20px);
     pointer-events: none;
   }
   .phone-fallback {

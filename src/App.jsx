@@ -7,12 +7,12 @@ import Footer from './components/Footer'
 import WaIcon from './components/WaIcon'
 import { waLink } from './config'
 import Home from './pages/Home'
-import Productos from './pages/Productos'
-import Servicios from './pages/Servicios'
-import SobreNosotros from './pages/SobreNosotros'
-import Contacto from './pages/Contacto'
-import FAQ from './pages/FAQ'
 
+const Productos = lazy(() => import('./pages/Productos'))
+const Servicios = lazy(() => import('./pages/Servicios'))
+const SobreNosotros = lazy(() => import('./pages/SobreNosotros'))
+const Contacto = lazy(() => import('./pages/Contacto'))
+const FAQ = lazy(() => import('./pages/FAQ'))
 const ApexFitness = lazy(() => import('./demos/ApexFitness'))
 
 function PageTransition({ children }) {
@@ -66,9 +66,11 @@ function AppContent() {
       </a>
       <Navbar />
       <main className="pt-20">
-        <PageTransition>
-          <AnimatedRoutes />
-        </PageTransition>
+        <Suspense fallback={<div className="min-h-[70vh]" />}>
+          <PageTransition>
+            <AnimatedRoutes />
+          </PageTransition>
+        </Suspense>
       </main>
       <Footer />
     </div>
